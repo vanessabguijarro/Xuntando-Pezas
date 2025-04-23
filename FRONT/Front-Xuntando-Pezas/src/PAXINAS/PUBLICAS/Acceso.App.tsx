@@ -14,10 +14,10 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   setInputs(values => ({...values, [name]: value}))
 }
 
-const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault();
   console.log(inputs);
-  login(inputs)
+  await login(inputs)
 }
 
 

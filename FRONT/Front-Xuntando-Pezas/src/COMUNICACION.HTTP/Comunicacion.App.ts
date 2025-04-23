@@ -1,4 +1,4 @@
-import { TipoRespostaServidor } from "../TIPOS/TIPOS.Comunicacion.App";
+import {  TipoRespostaServidor } from "../TIPOS/TIPOS.Comunicacion.App";
 /**
  * @author Pepito Gutierrez
  * @class Comunicacion
@@ -27,8 +27,25 @@ export class Comunicacion{
      * @param endpoint  será un endpoint de tipo texto
      */
     static async metodoPost(endpoint: string,datos:any){
-        let resposta = await fetch(endpoint,datos); //  Son os datos que enviamos co endpoint
+
+        if (!datos || !datos.username) {
+            console.log('datos en metodoPost ',datos)
+            console.error("El objeto 'datos' o la propiedad 'username' está vacío.");
+            return;
+        }else{
+            
+            let datoEnviados : RequestInit = {
+            method: 'POST',
+            headers:{
+                "Content-type":"application/json"
+            },
+            body: JSON.stringify(datos)
+        }
+        console.log("endpoint ",endpoint,datoEnviados)
+        let resposta = await fetch(endpoint,datoEnviados); //  Son os datos que enviamos co endpoint
         this.datos = await resposta.json();         //  En resposta é que me está a enviar o Server
+        }
+        
     }
     static async metodoPaxinaGet(endpoint: string,datos:any){
         let resposta = await fetch(endpoint,datos); //  Son os datos que enviamos co endpoint

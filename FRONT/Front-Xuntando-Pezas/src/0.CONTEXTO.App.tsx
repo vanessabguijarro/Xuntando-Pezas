@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 //### A miña
 //export const LocalContext = createContext<object>({}); // inicializo
 //
-import {UserData,LocalContextType} from './TIPOS/INTERFACES.App'
+import {LocalContextType} from './TIPOS/INTERFACES.App'
 import { Comunicacion } from './COMUNICACION.HTTP/Comunicacion.App';
+import { endpoints, urlServidorLocal } from './DATOS/datos';
 
 export const LocalContext = createContext<LocalContextType | null>(null);
 
@@ -13,12 +14,11 @@ function Proveedorcontexto({ children }: { children: React.ReactNode }){
     let navigate = useNavigate();
 
 
-    const login = async (dato:UserData)=>{
+    const login = async (dato:any)=>{
         
-        await Comunicacion.metodoPost("/acceso",dato.username);
+        await Comunicacion.metodoPost(`${urlServidorLocal}/${endpoints.acceso}`,dato);
         
         if(Comunicacion.isUser()){
-            console.log('estou dentro de filtro: ',dato.username)
             setIsUserLogueado(true)
             navigate('/app')
         }
