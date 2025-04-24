@@ -5,7 +5,7 @@ const AccesoApp = () => {
   const {login}  = useDatosContext();
   const [inputs, setInputs] = useState<DatosUser>({
     username:"",
-    age:""
+    pwd:""
   });
   
 const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,9 +33,9 @@ return (<>
     </label>
     <label>Introduce a túa idade:
       <input 
-        type="number" 
-        name="age" 
-        value={inputs.age || ""} 
+        type="password" 
+        name="pwd" 
+        value={inputs.pwd || ""} 
         onChange={handleChange}
       />
       </label>

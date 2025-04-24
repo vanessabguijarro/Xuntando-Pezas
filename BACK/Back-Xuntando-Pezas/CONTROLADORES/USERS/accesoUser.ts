@@ -8,7 +8,7 @@ import { datoUser } from "../../Tipos/bbdd.tipos";
 export const accesoUser = async (req:Request,res:Response)=>{
     // DESESTRUCTURACION CON TYPESCRIPT
     //const { username } : {username : string} = req.body
-    const { username } = req.body
+    const { username,pwd } = req.body
     
      try {
 
@@ -20,7 +20,7 @@ export const accesoUser = async (req:Request,res:Response)=>{
         
         // Lemos o resultado na base de datos
         
-        if(username === datoUserLido.NAME_USER_TRABALLADOR ){
+        if(username === datoUserLido.NAME_USER_TRABALLADOR && pwd === datoUserLido.PWD_TRABALLADOR){
             const token = Jwt.sign({ user: username }, process.env.SEGREDO || "clavePorDefecto");
             console.log(typeof process.env.SEGREDO)
             res.json({ token });
