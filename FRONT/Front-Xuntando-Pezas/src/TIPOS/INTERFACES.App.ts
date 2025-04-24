@@ -8,7 +8,7 @@ interface LocalContextType {
 }
 interface DatosUser {
     username:string,
-    age:string
+    pwd:string
   }
 export type {
     UserData,
