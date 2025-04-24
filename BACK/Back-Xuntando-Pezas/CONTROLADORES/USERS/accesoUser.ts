@@ -4,6 +4,7 @@ import { execucionTodoBBDD } from "../../instruccions.base.sqlite";
 import { listaInstruccions } from "../../datos/lista.instruccions.bbdd.israel";
 
 import { datoUser } from "../../Tipos/bbdd.tipos";
+import { isUser } from "../../helpers";
 
 export const accesoUser = async (req:Request,res:Response)=>{
     // DESESTRUCTURACION CON TYPESCRIPT
@@ -19,10 +20,12 @@ export const accesoUser = async (req:Request,res:Response)=>{
         datoUserLido = await instanciaBBDD.lerUnhaFila(listaInstruccions.instruccion.sqlLecturaUser,username)
         
         // Lemos o resultado na base de datos
-        
-        if(username === datoUserLido.NAME_USER_TRABALLADOR && pwd === datoUserLido.PWD_TRABALLADOR){
+        let condicionEntrada = isUser(req.body,datoUserLido)
+
+        //condicionEntrada ? tokenUser(req.body,res) : res.json({mensaxe: 'non existe o usuario'})
+
+        if(condicionEntrada){
             const token = Jwt.sign({ user: username }, process.env.SEGREDO || "clavePorDefecto");
-            console.log(typeof process.env.SEGREDO)
             res.json({ token });
         }
     } catch (error) {
