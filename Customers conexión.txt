@@ -1,0 +1,6 @@
+Customers conexión:
+pagina en privado, crear código visible con conexión a BBDD
+crear un home útil (el completo lo realiza Isra)
+
+Customers CSS
+crear el propio css e importar en Acceso.app.css
