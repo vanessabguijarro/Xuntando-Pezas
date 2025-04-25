@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useDatosContext } from "../../HOOKS/useDatosContext";
 import { DatosUser } from "../../TIPOS/INTERFACES.App";
+import "../../estilo/Acceso.App.css";
+import { Titulo } from "../../Componentes/Titulo";
+import { Imaxes } from "../../assets/Imaxes";
+
 const AccesoApp = () => {
   const {login}  = useDatosContext();
   const [inputs, setInputs] = useState<DatosUser>({
@@ -21,27 +25,38 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 }
 
 
-return (<>
-<form onSubmit={handleSubmit}>
-    <label>Introduce o teu nome:
+return (<div className="estilo-acceso">
+ 
+
+    <Titulo titulo="Login" estilo="estilo-titulo"/>
+  
+<form className="form-acceso" onSubmit={handleSubmit}>
+    <label className="label-acceso">
+      <img className="imaxes-acceso" src={Imaxes.mensaxeSecreto} alt="usuario" />
+      
     <input 
+      className="input-acceso"
       type="text" 
       name="username" 
+      placeholder="Introduce o teu nome:"
       value={inputs.username || ""} 
       onChange={handleChange}
     />
     </label>
-    <label>Introduce a túa idade:
+    <label className="label-acceso" >
+    <img className="imaxes-acceso" src={Imaxes.usuario} alt="usuario" />
       <input 
+        className="input-acceso"
         type="password" 
         name="pwd" 
+        placeholder="Introduce o teu password"
         value={inputs.pwd || ""} 
         onChange={handleChange}
       />
       </label>
-      <input type="submit" />
+      <input className="input-acceso" type="submit" />
   </form>
-</>
+</div>
   
 )
   };

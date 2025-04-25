@@ -1,0 +1,42 @@
+.form-acceso{
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+    width: 350px;
+}
+.label-acceso{
+    color: black;
+    display: flex;
+    justify-content: space-around;
+}
+.imaxes-acceso{
+    width: 24px;
+}
+::placeholder{
+    color: rgb(226, 226, 226);
+    font-size:600;
+}
+.input-acceso[type="text"],.input-acceso[type="password"]{
+    background-color:white;
+    padding: 3px;
+}
+.input-acceso[type="submit"]{
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #4C8DEB;
+    height: 30px;
+}
+.estilo-titulo{
+    color:black;
+}
+.estilo-acceso{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
