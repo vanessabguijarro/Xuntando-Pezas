@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 //import AccesoApp from "../PAXINAS/PUBLICAS/Acceso.App";
-import Customers from "../PAXINAS/PRIVADAS/Customers";
+import Customers from "../Componentes/Customers/Customers";
 
 export default function RutasPublicasApp(){
     return <>
