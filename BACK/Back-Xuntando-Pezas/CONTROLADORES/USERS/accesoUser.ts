@@ -1,38 +1,29 @@
-import { Request, Response } from "express";
-import Jwt from "jsonwebtoken";
-import { execucionTodoBBDD } from "../../instruccions.base.sqlite";
-import { listaInstruccions } from "../../datos/lista.instruccions.bbdd.israel";
+// filepath: [accesoUser.ts](http://_vscodecontentref_/3)
+import { Request, Response } from 'express';
+import { db } from '../../configuracion.db';
+import { listaInstruccions } from '../../datos/lista.instruccions.bbdd.israel';
 
-import { datoUser } from "../../Tipos/bbdd.tipos";
-import { isUser } from "../../helpers";
+export const accesoUser = async (req: Request, res: Response) => {
+  const { name_user_traballador, pwd_traballador } = req.body;
 
-export const accesoUser = async (req:Request,res:Response)=>{
-    // DESESTRUCTURACION CON TYPESCRIPT
-    //const { username } : {username : string} = req.body
-    const { username,pwd } = req.body
-    
-     try {
+  try {
+    const [rows]: any = await db.query(
+      listaInstruccions.instruccion.sqlLecturaUser,
+      [name_user_traballador]
+    );
 
-        let datoUserLido : datoUser;// mirar con 'const' xq non funciona
-        let instanciaBBDD = execucionTodoBBDD()
-        
-        //datoUserLido = await instanciaBBDD.lerUnhaFila(`select name_user_traballador,pwd_traballador from TRABALLADOR where name_user_traballador = ?`,'Israel')
-        datoUserLido = await instanciaBBDD.lerUnhaFila(listaInstruccions.instruccion.sqlLecturaUser,username)
-        
-        // Lemos o resultado na base de datos
-        let condicionEntrada = isUser(req.body,datoUserLido)
+    if (rows.length === 0) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
 
-        //condicionEntrada ? tokenUser(req.body,res) : res.json({mensaxe: 'non existe o usuario'})
+    const user = rows[0];
+    if (user.pwd_traballador !== pwd_traballador) {
+      return res.status(401).json({ error: 'Contraseña incorrecta' });
+    }
 
-        if(condicionEntrada){
-            const token = Jwt.sign({ user: username }, process.env.SEGREDO || "clavePorDefecto");
-            res.json({ token });
-        }
-    } catch (error) {
-        console.error("Error al firmar el token:", error);
-        res.status(500).send("Error interno del servidor");
-    } 
-      
-
-
-}
+    res.json({ message: 'Acceso exitoso', user });
+  } catch (error) {
+    console.error('Error al autenticar usuario:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
+};

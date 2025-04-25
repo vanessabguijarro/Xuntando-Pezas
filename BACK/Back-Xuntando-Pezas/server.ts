@@ -1,38 +1,34 @@
-import express from 'express';
-import multer from 'multer';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import fs from 'fs';
-import { storage } from './configuracion.multer';
-import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
-import { obterTraballadores } from './CONTROLADORES/USERS/traballadores';
+const express = require('express');
+const sqlite3 = require('sqlite3').verbose();
+const cors = require('cors');
 
-dotenv.config();
-
-const portNumber = process.env.PORT || 3000;
 const app = express();
-const upload = multer({ storage: storage });
-
-// Crear carpeta 'uploads' si no existe
-if (!fs.existsSync('uploads')) {
-  fs.mkdirSync('uploads');
-}
-
-// Middlewares
 app.use(cors());
-app.use(express.json());
+const PORT = 3001;
 
-// Rutas
-app.post("/acceso", accesoUser);
-app.get("/traballadores", obterTraballadores);
-
-// Middleware para manejo de errores
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Erro interno do servidor' });
+// Conectar a la base de datos
+const db = new sqlite3.Database('./user.db', (err) => {
+    if (err) {
+        console.error('Error al conectar a la base de datos:', err.message);
+    } else {
+        console.log('Conexión exitosa a la base de datos.');
+    }
 });
 
-// Iniciar servidor
-app.listen(portNumber, 'localhost', () => {
-  console.log('Listening on localhost:' + portNumber);
+// Ruta para obtener los IDs
+app.get('/api/ids', (req, res) => {
+    const query = "SELECT id FROM usuarios"; // Asegúrate de que la tabla 'usuarios' exista
+    db.all(query, [], (err, rows) => {
+        if (err) {
+            console.error('Error ejecutando la consulta:', err.message);
+            res.status(500).json({ error: 'Error al obtener los datos.' });
+            return;
+        }
+        res.json(rows); // Devuelve los resultados como JSON
+    });
+});
+
+// Iniciar el servidor
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
