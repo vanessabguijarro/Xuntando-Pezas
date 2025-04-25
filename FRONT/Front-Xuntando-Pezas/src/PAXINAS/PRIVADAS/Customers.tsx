@@ -1,3 +1,23 @@
+/**
+ * import CustomersTable from "./CustomersTable";
+
+const Customers = () => {
+  return (
+    <div className="layoutCostumers">
+      {/* Tu aside y todo eso }
+      <main className="contenidoPrincipal_customers">
+        {/* Tu header }
+        <CustomersTable />
+      </main>
+    </div>
+  );
+};
+
+export default Customers;
+ */
+
+
+
 /*BARRA SUPERIOR */
 import profileIzq from "../../assets/ImgCustomers/barra_superior/profileIzq.svg";
 import search from "../../assets/ImgCustomers/barra_superior/search.svg";
