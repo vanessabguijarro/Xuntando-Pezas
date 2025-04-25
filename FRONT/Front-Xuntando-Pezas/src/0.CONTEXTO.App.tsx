@@ -11,7 +11,7 @@ export const LocalContext = createContext<LocalContextType | null>(null);
 
 function Proveedorcontexto({ children }: { children: React.ReactNode }){
     const [isUserLogueado,setIsUserLogueado] = useState(false)
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const login = async (dato:any)=>{
