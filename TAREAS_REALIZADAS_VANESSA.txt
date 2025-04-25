@@ -1,4 +1,5 @@
 --> Creación de documento Customers.tsx en PAXINAS-PRIVADAS
--->
--->
--->
+--> Trampeado Rutas.Publicas.App.tsx para poder ver mi archivo
+--> Colocado en App.css y en Index.css mi css Customers.css
+--> Comentado todo el Index.css y cambia la vista, estaba interfiriendo en mi css, aún no es perfecto
+--> COMENTO EL ARCHIVO APP.CSS PORQUE ESTÁ INTERFIRIENDO EN MI PÁGINA

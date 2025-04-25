@@ -1,17 +1,17 @@
 /*BARRA SUPERIOR */
-import profileIzq from "../../ImgCustomers/barra_superior/profileIzq.svg";
-import search from "../../ImgCustomers/barra_superior/search.svg";
-import profileDcha from "../../ImgCustomers/barra_superior/profileDcha.svg";
-import notificacionesIcon from "../../ImgCustomers/barra_superior/notifications.svg";
+import profileIzq from "../../assets/ImgCustomers/barra_superior/profileIzq.svg";
+import search from "../../assets/ImgCustomers/barra_superior/search.svg";
+import profileDcha from "../../assets/ImgCustomers/barra_superior/profileDcha.svg";
+import notificacionesIcon from "../../assets/ImgCustomers/barra_superior/notifications.svg";
 
 /*BARRA INFERIOR */
-import homeIcon from "../../ImgCustomers/menu_lateral/home.svg";
-import customersIcon from "../../ImgCustomers/menu_lateral/customers.svg";
-import newInvoiceIcon from "../../ImgCustomers/menu_lateral/new_invoice.svg";
-import tagIcon from "../../ImgCustomers/menu_lateral/tag.svg";
+import homeIcon from "../../assets/ImgCustomers/menu_lateral/home.svg";
+import customersIcon from "../../assets/ImgCustomers/menu_lateral/customers.svg";
+import newInvoiceIcon from "../../assets/ImgCustomers/menu_lateral/new_invoice.svg";
+import tagIcon from "../../assets/ImgCustomers/menu_lateral/tag.svg";
 
 /*Group */
-import grupoIconos from "../../ImgCustomers/group.svg";
+import grupoIconos from "../../assets/ImgCustomers/group.svg";
 
 const Customers = () => {
   return (

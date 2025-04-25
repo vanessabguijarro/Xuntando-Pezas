@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../PAXINAS/PRIVADAS/Home";
-import Customers from "../Componentes/Customers/Customers";
+import Customers from "../PAXINAS/PRIVADAS/Customers";
 
 export default function RutasPrivadasApp(){
     return <>
