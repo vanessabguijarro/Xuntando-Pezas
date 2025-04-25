@@ -3,3 +3,5 @@
 --> Colocado en App.css y en Index.css mi css Customers.css
 --> Comentado todo el Index.css y cambia la vista, estaba interfiriendo en mi css, aún no es perfecto
 --> COMENTO EL ARCHIVO APP.CSS PORQUE ESTÁ INTERFIRIENDO EN MI PÁGINA
+--> separación en componentes
+--> creo un archivo datos para customers
