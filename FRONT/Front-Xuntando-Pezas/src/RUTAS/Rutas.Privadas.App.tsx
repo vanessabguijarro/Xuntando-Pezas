@@ -5,6 +5,7 @@ export default function RutasPrivadasApp(){
     return <>
         <Routes>
             <Route path="/app" element={<Home />} />
+            <Route path= "/new-user" element= {< NewUser/>}/>
         </Routes>
 
     </>
