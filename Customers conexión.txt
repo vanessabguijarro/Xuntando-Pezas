@@ -4,3 +4,14 @@ crear un home útil (el completo lo realiza Isra)
 
 Customers CSS
 crear el propio css e importar en Acceso.app.css
+
+CAMPOS DE LA BBDD CUSTOMERS:
+
+ID
+NOME
+APELIDOS
+EMPRESA
+MAIL
+PROFESION
+ROL
+FOTO
