@@ -1,15 +1,19 @@
-
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-function App() {
-  const [elementos, setElementos] = useState([]);
+// Definimos una interfaz para los elementos
+interface Elemento {
+  id: number;
+  name: string;
+}
+
+const App: React.FC = () => {
+  const [elementos, setElementos] = useState<Elemento[]>([]);
 
   useEffect(() => {
-    // Realizar la solicitud a la API
-    Axios.get('http://localhost:5000/api/elementos')
+    Axios.get<Elemento[]>('http://localhost:5000/api/elementos')
       .then((response) => {
-        setElementos(response.data);  // Guardar los datos en el estado
+        setElementos(response.data);
       })
       .catch((error) => {
         console.error('Hubo un error al obtener los datos:', error);
@@ -28,6 +32,7 @@ function App() {
       </ul>
     </div>
   );
-}
+};
 
 export default App;
+

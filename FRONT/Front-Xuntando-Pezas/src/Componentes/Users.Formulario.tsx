@@ -4,7 +4,7 @@ import './AxUsers.css';
 interface User {
   name: string;
   email: string;
-  status: 'Busy' | 'Free' | 'Workin' | 'On Vacation';
+  status: 'Busy' | 'Free' | 'Working' | 'On Vacation';
   role: string;
 }
 
@@ -18,18 +18,17 @@ const UserForm: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setUser(prev => ({
+    setUser((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Usuario creado:', user);
-    // Aquí podrías hacer un POST a la API o actualizar un estado global
     alert(`Usuario ${user.name} registrado exitosamente!`);
-    setUser({ name: '', email: '', status: 'Free', role: '' });
+    setUser({ name: '', email: '', status: 'Free', role: '' }); // Resetea el formulario
   };
 
   return (
@@ -66,10 +65,11 @@ const UserForm: React.FC = () => {
             name="status"
             value={user.status}
             onChange={handleChange}
+            required
           >
             <option value="Busy">Busy</option>
             <option value="Free">Free</option>
-            <option value="Workin">Workin</option>
+            <option value="Working">Working</option>
             <option value="On Vacation">On Vacation</option>
           </select>
         </div>

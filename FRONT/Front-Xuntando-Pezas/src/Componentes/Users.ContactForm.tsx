@@ -18,15 +18,18 @@ const ContactForm: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:3001/api/contact', formData);
-      setStatus('Mensaje enviado con éxito!');
+      console.log(res.data); // Puedes eliminar esta línea si no quieres mostrarlo en consola
+      setStatus('¡Mensaje enviado con éxito!');
+      setFormData({ name: '', email: '', message: '' }); // Limpiar formulario tras envío
     } catch (error) {
+      console.error(error);
       setStatus('Error al enviar el mensaje');
     }
   };
@@ -57,4 +60,9 @@ const ContactForm: React.FC = () => {
         required
       />
       <button type="submit">Enviar</button>
-      {status && <p>{status}</p
+      {status && <p>{status}</p>}
+    </form>
+  );
+};
+
+export default ContactForm;

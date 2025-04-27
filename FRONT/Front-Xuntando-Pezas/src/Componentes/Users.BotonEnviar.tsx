@@ -1,7 +1,10 @@
-
 import React from 'react';
 
-const BotonEnviar = ({ onClick }) => {
+interface BotonEnviarProps {
+  onClick: () => void;
+}
+
+const BotonEnviar: React.FC<BotonEnviarProps> = ({ onClick }) => {
   return (
     <button onClick={onClick}>
       Enviar

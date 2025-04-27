@@ -1,31 +1,36 @@
 import React, { useState, useEffect } from 'react';
 
-const DataTable = () => {
-  const [data, setData] = useState([]);  // Para almacenar los datos obtenidos
-  const [loading, setLoading] = useState(true);  // Para manejar el estado de carga
-  const [error, setError] = useState(null);  // Para manejar posibles errores
+// Definimos una interfaz para los datos que recibimos
+interface Item {
+  id: number;
+  nombre: string;
+  correo: string;
+}
+
+const DataTable: React.FC = () => {
+  const [data, setData] = useState<Item[]>([]); // Tipamos como array de Item
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Realizar la solicitud a la API
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.example.com/data');  // URL de la API
+        const response = await fetch('https://api.example.com/data');
         if (!response.ok) {
           throw new Error('Error al obtener los datos');
         }
-        const result = await response.json();
+        const result: Item[] = await response.json(); // Tipamos también la respuesta
         setData(result);
         setLoading(false);
-      } catch (error) {
-        setError(error.message);
+      } catch (error: any) {
+        setError(error.message || 'Error desconocido');
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);  // El array vacío asegura que solo se ejecute una vez al montar el componente
+  }, []);
 
-  // Mostrar un mensaje de carga o error si es necesario
   if (loading) {
     return <div>Cargando...</div>;
   }
@@ -37,7 +42,7 @@ const DataTable = () => {
   return (
     <div>
       <h1>Datos de la Base de Datos</h1>
-      <table border="1">
+      <table border={1}>
         <thead>
           <tr>
             <th>ID</th>
@@ -47,13 +52,12 @@ const DataTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map(item => (
+          {data.map((item) => (
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.nombre}</td>
               <td>{item.correo}</td>
               <td>
-                {/* Aquí podrías agregar botones u opciones de acción */}
                 <button>Editar</button>
                 <button>Eliminar</button>
               </td>

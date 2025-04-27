@@ -1,19 +1,25 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Trabajador = () => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  nombre: string;
+  puesto: string;
+  email: string;
+}
+
+const Trabajador: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     nombre: '',
     puesto: '',
     email: ''
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/api/trabajadores', formData);
