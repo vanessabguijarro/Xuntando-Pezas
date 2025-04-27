@@ -1,4 +1,4 @@
-// BotonEnviar.jsx
+
 import React from 'react';
 
 const BotonEnviar = ({ onClick }) => {

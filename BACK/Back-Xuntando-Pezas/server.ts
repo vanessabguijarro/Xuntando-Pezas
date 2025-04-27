@@ -1,34 +1,21 @@
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-const cors = require('cors');
-
+import express from 'express';
+import multer from 'multer';
+import { storage } from './configuracion.multer';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
+dotenv.config();
+const portNumber = 3000;
 const app = express();
-app.use(cors());
-const PORT = 3001;
 
-// Conectar a la base de datos
-const db = new sqlite3.Database('./user.db', (err) => {
-    if (err) {
-        console.error('Error al conectar a la base de datos:', err.message);
-    } else {
-        console.log('Conexión exitosa a la base de datos.');
-    }
-});
+const upload = multer({ storage: storage })
 
-// Ruta para obtener los IDs
-app.get('/api/ids', (req, res) => {
-    const query = "SELECT id FROM usuarios"; // Asegúrate de que la tabla 'usuarios' exista
-    db.all(query, [], (err, rows) => {
-        if (err) {
-            console.error('Error ejecutando la consulta:', err.message);
-            res.status(500).json({ error: 'Error al obtener los datos.' });
-            return;
-        }
-        res.json(rows); // Devuelve los resultados como JSON
-    });
-});
+app.use(cors())
+app.use(express.json())
 
-// Iniciar el servidor
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+app.post("/acceso",accesoUser)
+
+
+app.listen(portNumber, 'localhost', () => {
+    console.log('Listening on localhost:' + portNumber);
 });
