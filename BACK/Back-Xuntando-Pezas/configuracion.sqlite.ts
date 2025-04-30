@@ -1,3 +1,4 @@
+/*ARCHIVO CREADO POR VANESSA */
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 
@@ -28,8 +29,8 @@ export const conectarDB = async () => {
      await db.run(`
        INSERT INTO customers (name, email, address, corporation, role)
        VALUES
-         ('Ana García', 'ana@example.com', 'Calle Falsa 123', 'Balidea', 'admin'),
-         ('Luis Pérez', 'luis@example.com', 'Av. Siempre Viva 456', 'Altia', 'user');
+         ('Ana García', 'ana@example.com', 'Calle Falsa 123', 'Balidea', 'Bot Analyst'),
+         ('Luis Pérez', 'luis@example.com', 'Av. Siempre Viva 456', 'Altia', 'Reporter');
      `);
    }
 

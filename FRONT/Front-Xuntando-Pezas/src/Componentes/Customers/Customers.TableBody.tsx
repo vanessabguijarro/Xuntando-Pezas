@@ -20,7 +20,7 @@ export const CustomersTableBody: React.FC<Props> = ({ customers }) => {
           <td>{customer.email}</td>
           <td>{customer.status}</td>
           <td>{customer.role}</td>
-          <td>Actions</td>
+          <td>✏️ 🗑️</td>
         </tr>
       ))}
     </tbody>
