@@ -30,19 +30,19 @@ return (<div className="estilo-acceso">
 <form className="form-acceso" onSubmit={handleSubmit}>
     <Titulo titulo="Login" estilo="estilo-titulo"/>
     <label className="label-acceso">
-      <img className="imaxes-acceso" src={Imaxes.mensaxeSecreto} alt="usuario" />
+      <img className="imaxes-acceso" src={Imaxes.usuario} alt="usuario" />
       
     <input 
       className="input-acceso"
       type="text" 
       name="username" 
-      placeholder="Introduce o teu nome:"
+      placeholder="Introduce o teu nome"
       value={inputs.username || ""} 
       onChange={handleChange}
     />
     </label>
     <label className="label-acceso" >
-    <img className="imaxes-acceso" src={Imaxes.usuario} alt="usuario" />
+    <img className="imaxes-acceso" src={Imaxes.mensaxeSecreto}  alt="usuario" />
       <input 
         className="input-acceso"
         type="password" 
