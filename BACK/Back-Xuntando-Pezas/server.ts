@@ -4,6 +4,7 @@ import { storage } from './configuracion.multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
+import fs from 'fs';
 
 dotenv.config();
 
@@ -18,5 +19,6 @@ app.use(express.json());
 app.post("/acceso", accesoUser);
 
 app.listen(portNumber, () => {
-  console.log(`Servidor escuchando en http://localhost:${portNumber}`);
+  // fs module is already imported at the top level
+  fs.writeFileSync('./configuracion.db.ts', "declare module '../../configuracion/configuracion.db';");
 });

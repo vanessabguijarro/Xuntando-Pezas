@@ -1,21 +1,19 @@
 import { Request, Response } from 'express';
-import { db } from '../../configuracion/configuracion.db'; // Ensure this file exists or adjust the path
+import { getDb } from '../../configuracion/configuracion.db'; // ✅ usa getDb
 import { listaInstruccions } from '../../datos/lista.instruccions.bbdd.israel';
 
-
-// Tipado de usuario (ajústalo según tu base de datos)
 interface Usuario {
   id: number;
   name_user_traballador: string;
   pwd_traballador: string;
-  // agrega otros campos si existen
 }
 
 export const accesoUser = async (req: Request, res: Response): Promise<void> => {
   const { name_user_traballador, pwd_traballador } = req.body;
 
   try {
-    const [rows] = await db.query<Usuario[]>(
+    const db = await getDb(); // ✅ usa await
+    const rows: Usuario[] = await db.all(
       listaInstruccions.instruccion.sqlLecturaUser,
       [name_user_traballador]
     );
@@ -36,6 +34,5 @@ export const accesoUser = async (req: Request, res: Response): Promise<void> => 
   } catch (error) {
     console.error('Error al autenticar usuario:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
-    
   }
 };
