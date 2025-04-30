@@ -5,7 +5,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
 
-
 dotenv.config();
 
 const app = express();
