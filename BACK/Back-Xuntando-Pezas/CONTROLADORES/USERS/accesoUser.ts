@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { db } from '../../configuracion.db';
+import { db } from '../../configuracion/configuracion.db'; // Ensure this file exists or adjust the path
 import { listaInstruccions } from '../../datos/lista.instruccions.bbdd.israel';
 
 
