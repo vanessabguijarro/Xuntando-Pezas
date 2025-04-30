@@ -4,7 +4,8 @@
     flex-direction: column;
     justify-content: center;
     height: 600px;
-    width: 350px;
+    width: 500px;
+    gap: 50px;
 }
 .label-acceso{
     color: black;
@@ -12,24 +13,35 @@
     justify-content: space-around;
 }
 .imaxes-acceso{
-    width: 24px;
+    width: 40px;
 }
 ::placeholder{
     color: rgb(226, 226, 226);
-    font-size:600;
+    font-weight:600;
+    
+    color: #4C8DEB;
 }
 .input-acceso[type="text"],.input-acceso[type="password"]{
     background-color:white;
     padding: 3px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(255, 144, 144);
 }
-.input-acceso[type="submit"]{
-    border: 1px solid transparent;
-    border-radius: 5px;
+button[type="submit"]{
+    background-color:white;
+    padding: 3px;
+    padding: 10px;
+    border-radius: 10px;
     background-color: #4C8DEB;
-    height: 30px;
+    width: 50%;
+    padding: 10px;
+    font-size: 25px;
 }
+
 .estilo-titulo{
     color:black;
+    font-size: 40px;
 }
 .estilo-acceso{
     display: flex;

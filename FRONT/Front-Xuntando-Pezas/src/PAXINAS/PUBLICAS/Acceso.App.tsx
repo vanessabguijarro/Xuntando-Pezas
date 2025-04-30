@@ -26,11 +26,9 @@ const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 
 
 return (<div className="estilo-acceso">
- 
-
-    <Titulo titulo="Login" estilo="estilo-titulo"/>
   
 <form className="form-acceso" onSubmit={handleSubmit}>
+    <Titulo titulo="Login" estilo="estilo-titulo"/>
     <label className="label-acceso">
       <img className="imaxes-acceso" src={Imaxes.mensaxeSecreto} alt="usuario" />
       
@@ -54,7 +52,8 @@ return (<div className="estilo-acceso">
         onChange={handleChange}
       />
       </label>
-      <input className="input-acceso" type="submit" />
+      <label>{/* <input className="input-acceso" type="submit" /> */}<button type="submit" className="input-acceso">Enviar</button></label>
+      
   </form>
 </div>
   
