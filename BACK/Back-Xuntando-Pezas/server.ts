@@ -3,7 +3,7 @@ import multer from 'multer';
 import { storage } from './configuracion.multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
+import { accesoUser } from './CONTROLADORES/accesoUser';
 
 dotenv.config();
 
