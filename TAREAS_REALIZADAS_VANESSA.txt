@@ -5,3 +5,11 @@
 --> COMENTO EL ARCHIVO APP.CSS PORQUE ESTÁ INTERFIRIENDO EN MI PÁGINA
 --> separación en componentes
 --> creo un archivo datos para customers
+--> hook: useCustomer.ts
+--> tipos: customer.ts
+--> he instalado en back --> npm install --save-dev @types/sql.js
+--> conexion a bbdd para traer customers a la tabla: server.ts
+--> creacion en BACK/CONTROLADORES carpeta CUSTOMERS para introducir el getCostumers
+--> creación de archivo configuracion.sqlite en BACK
+--> FRONT --> componentes/CUSTOMERS/Customers.Table.tsx, Customers.TableBody.tsx, Customers.TableHeader.tsx
+--> 

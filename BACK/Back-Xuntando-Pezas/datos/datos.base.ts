@@ -25,6 +25,7 @@ CREATE TABLE if not exists CLIENTE(
                 ROL_CLIENTE						        TEXT(200) NULL,
                 EMAIL_CLIENTE						    TEXT(50)
 );
+
 CREATE TABLE if not exists TRABALLADOR(
                  ID_USER_TRABALLADOR			 		INTEGER PRIMARY KEY AUTOINCREMENT,
                  NAME_USER_TRABALLADOR           		TEXT(50),

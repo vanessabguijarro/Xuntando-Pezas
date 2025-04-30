@@ -9,6 +9,5 @@ export default function RutasPrivadasApp(){
             {/* cambio Vanessa */}
             <Route path="/customers" element={<Customers/>}/>
         </Routes>
-
     </>
 }
