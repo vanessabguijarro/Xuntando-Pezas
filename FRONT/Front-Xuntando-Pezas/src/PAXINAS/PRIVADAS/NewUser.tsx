@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useState } from "react";
+import "../../componentes/PaxinaNewUser/index.css";
+import Formulario from "../../componentes/PaxinaNewUser/Formulario";
+import ImaxenEngranaxe from "../../componentes/PaxinaNewUser/ImaxenEngranaxe";
+import Avatar from "../../componentes/PaxinaNewUser/Avatar";
+import BotonEnviar from "../../componentes/PaxinaNewUser/BotonEnviar";
+import { Imaxes } from "../../assets/imaxes_newuser";
 
-const NewUser = () => {
-  return (
-    <div>
-      <h1>New User</h1>
-      {}
-    </div>
-  );
+const [imagenPerfil, setImagenPerfil] = useState<string>(Imaxes.avatar);
+const [datosFormulario, setDatosFormulario] = useState({});
+
+// ...
+
+const handleSubmit = async () => {
+  const datos = { ...datosFormulario, imagen: imagenPerfil };
+  try {
+    const res = await fetch("http://localhost:3000/usuarios", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(datos)
+    });
+    const json = await res.json();
+    console.log("Usuario creado correctamente:", json);
+  } catch (err) {
+    console.error("Error al crear usuario:", err);
+  }
 };
-
-export default NewUser;
-
-const NewUser = ()=>{
-    return <h1>Estou en NewUser</h1>
-}
-
-export default NewUser;
