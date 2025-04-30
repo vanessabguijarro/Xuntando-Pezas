@@ -1,0 +1,7 @@
+
+
+
+.container {
+    display: flex;
+    min-height: 100vh; /* Ensure container takes up at least the full viewport height */
+  }

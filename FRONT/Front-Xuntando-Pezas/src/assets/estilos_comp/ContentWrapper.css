@@ -1,0 +1,12 @@
+.content-wrapper {
+    background-color: #ffffff; /* Light background for contrast */
+    min-width: 95vw; /* Use percentage for flexible width */
+    display: flex;
+    flex-direction: column;
+  }
+
+.main-content {
+    background-color: #faf9ff;
+    padding: 20px;
+    flex-grow: 1;
+  }

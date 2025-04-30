@@ -1,0 +1,52 @@
+/* Sidebar */
+.sidebar {
+    width: 5vw; /* Use percentage for more flexible width */
+    min-width: 38px;
+    max-width: 55px;
+    min-height: 100vh;
+    background-color: #4a90e2;
+    background: linear-gradient(to bottom, #4a90e2 0%, #4e32ca 100%);
+    color: white;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    align-items: center; /* Adjusted font size */
+  }
+  
+ 
+  .sidebar ul {
+    list-style-type: none;
+    height: 29vh;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    margin-top: 10vh;
+    flex-grow: 1;
+    align-items: center;
+  
+    /* Allow the list to take up remaining space */
+  }
+  
+  .sidebar ul li {
+    padding: 4px;
+    margin: 5px;
+    margin-bottom: 9px;
+    height: 7%;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #2765c2;
+    border-radius: 3px;
+  }
+  
+  .sidebar ul li a {
+    cursor: pointer;
+  }
+  
+  .sidebar ul li .icon-side {
+    width: 90%;
+    filter: invert(94%);
+  }

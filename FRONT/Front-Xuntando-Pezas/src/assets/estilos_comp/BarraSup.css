@@ -1,0 +1,56 @@
+.top-bar {
+  padding: 18px 22px;
+  width: 100%;
+  border-bottom: 2px solid #ddddddec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.notif-bell {
+  height: 24px;
+  opacity: 0.5;
+  cursor: pointer;
+  padding-right: 16px;
+}
+
+.notif-bell:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+.user-actions .user-logo {
+  display: inline-flex;
+  margin-top: -5%;
+  height: auto;
+}
+
+.user-logo {
+  width: 49px;
+  aspect-ratio: 1;
+  border-radius: 23px;
+  background-image: url("../../assets/images/icons/profile_photo_default.svg");
+}
+
+.user-logo:hover {
+  cursor: pointer;
+  border: 2px #42425f solid;
+}
+
+/* Header */
+header {
+  background-color: #faf9ff;
+  padding: 0px;
+}
+
+header h1 {
+  font-size: 1.75em;
+  margin: 0;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+}

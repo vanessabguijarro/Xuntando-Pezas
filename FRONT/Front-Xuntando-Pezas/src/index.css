@@ -1,4 +1,25 @@
-:root {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6; /* Improve readability */
+  min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
+
+body > div#root {
+  display: contents;  /* Layout doesn't see the root div */
+}
+
+body > div#root > div {
+  display: contents;  /* Layout doesn't see this div either */
+}
+
+
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -64,5 +85,4 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
-  }
-}
+  } */
