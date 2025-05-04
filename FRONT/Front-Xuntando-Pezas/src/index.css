@@ -12,7 +12,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ul{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+li{
+  list-style: none;
+  display: flex;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,6 +36,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #DADADA;
 }
 
 h1 {

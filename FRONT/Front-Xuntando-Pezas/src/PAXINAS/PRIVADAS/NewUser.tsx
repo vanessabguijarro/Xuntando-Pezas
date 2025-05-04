@@ -10,3 +10,9 @@ const NewUser = () => {
 };
 
 export default NewUser;
+
+const NewUser = ()=>{
+    return <h1>Estou en NewUser</h1>
+}
+
+export default NewUser;
