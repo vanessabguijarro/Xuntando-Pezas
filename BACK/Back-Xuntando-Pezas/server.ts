@@ -21,4 +21,5 @@ app.post("/acceso", accesoUser);
 app.listen(portNumber, () => {
   // fs module is already imported at the top level
   fs.writeFileSync('./configuracion.db.ts', "declare module '../../configuracion/configuracion.db';");
+  
 });
