@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS USERS (
     EMAIL                            CHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS TRABALLADOR (
+CREATE TABLE IF NOT EXISTS EMAIL (
     ID                              INTEGER PRIMARY KEY AUTOINCREMENT,
     NAME                            CHAR(50),
     APELIDO1                        CHAR(50),
@@ -15,15 +15,6 @@ CREATE TABLE IF NOT EXISTS TRABALLADOR (
     PROFESION                       TEXT NULL,
     ROL                             TEXT NULL,
     EMAIL                           CHAR(50)
-);
-
-CREATE TABLE IF NOT EXISTS PEDIDO (
-    ID_PEDIDO                       INTEGER PRIMARY KEY AUTOINCREMENT,
-    CODIGO                          CHAR(50),
-    NOMBRE_PRODUCTO                 CHAR(50),
-    FECHA                           CHAR(50),
-    CANTIDAD                        INTEGER,
-    PRECIO                          REAL
 );
 
 CREATE TABLE IF NOT EXISTS STATUS (
@@ -42,5 +33,3 @@ CREATE TABLE IF NOT EXISTS ROLE (
     ROL                             TEXT NULL,
     EMAIL                           CHAR(50)
 );
-
-
