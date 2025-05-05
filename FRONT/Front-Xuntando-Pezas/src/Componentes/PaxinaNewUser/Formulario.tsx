@@ -16,7 +16,7 @@ const Formulario = ({ onSubmit }: Props) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormulario({ ...formulario, [name]: value });
-    onSubmit({ ...formulario, [name]: value }); // actualiza en padre también
+    onSubmit({ ...formulario, [name]: value }); 
   };
 
   return (
