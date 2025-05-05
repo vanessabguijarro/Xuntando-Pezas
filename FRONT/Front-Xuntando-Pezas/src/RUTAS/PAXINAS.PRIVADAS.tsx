@@ -6,7 +6,7 @@ import Users from "../PAXINAS/PRIVADAS/Users";
 import NewCustomer from "../PAXINAS/PRIVADAS/NewCustomer";
 import NewInvoice from "../PAXINAS/PRIVADAS/NewInvoice";
 import NewProduct from "../PAXINAS/PRIVADAS/NewProduct";
-import NewUser from "../PAXINAS/PRIVADAS/NewUser";
+import NewUser from "../PAXINAS/PRIVADAS/NewUser"
 
 export {
     Customers,
@@ -17,5 +17,5 @@ export {
     NewCustomer,
     NewInvoice,
     NewProduct,
-    NewUser
+    NewUser,
 }
