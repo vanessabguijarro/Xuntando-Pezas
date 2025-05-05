@@ -1,7 +1,8 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  /*max-width: 1280px;*/
   margin: 0 auto;
-  padding: 2rem;
+  /*padding: 2rem;*/
   text-align: center;
 }
 
@@ -17,7 +18,17 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
+.menu-lateral{
+  display: flex;
+  flex-direction: column;
+}
+.estilo-paxinas-app{
+  background-color: orange;
+  display: flex;
+}
+.height-100vh{
+  height: 100vh;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

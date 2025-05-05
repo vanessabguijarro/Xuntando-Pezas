@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import { Customers, Home, Invoices, NewCustomer, NewInvoice, NewProduct, NewUser, Products, Users } from "./PAXINAS.PRIVADAS";
-import { LinksRutasPrivadasApp } from "./Links.PAXINAS.PRIVADAS";
+//import { LinksRutasPrivadasApp } from "./Links.PAXINAS.PRIVADAS";
 import NoPage from "../PAXINAS/NoPage";
 
 export default function RutasPrivadasApp(){
     return <>
         <Routes>
-            <Route path="/app" element={<LinksRutasPrivadasApp />}>
-                <Route index element={<Home />} />
+            <Route path="/app">
+                <Route index element={<Home />} /> 
                 <Route path="customers" element={<Customers />}/>  
                 <Route path="invoices" element={<Invoices />}/>
                 <Route path="products" element={<Products />}/>
