@@ -7,7 +7,7 @@ interface Usuario {
   apellidos: string;
   mail: string;
   status: string;
-  rol: string;
+  role: string;
 }
 
 const UsersPage: React.FC = () => {
@@ -33,7 +33,7 @@ const UsersPage: React.FC = () => {
               <li><strong>Apellidos:</strong> {usuario.apellidos}</li>
               <li><strong>Mail:</strong> {usuario.mail}</li>
               <li><strong>Status:</strong> {usuario.status}</li>
-              <li><strong>Rol:</strong> {usuario.rol}</li>
+              <li><strong>Role:</strong> {usuario.role}</li>
             </ul>
           </div>
         )}
@@ -59,7 +59,7 @@ interface Usuario {
   apellidos: string;
   mail: string;
   status: string;
-  rol: string;
+  role: string;
 }
 
 const Formulario: React.FC<Props> = ({ onSubmit }) => {
@@ -69,7 +69,7 @@ const Formulario: React.FC<Props> = ({ onSubmit }) => {
     apellidos: "",
     mail: "",
     status: "",
-    rol: ""
+    role: ""
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -127,9 +127,9 @@ const Formulario: React.FC<Props> = ({ onSubmit }) => {
       />
       <input
         type="text"
-        name="rol"
-        placeholder="Rol"
-        value={formulario.rol}
+        name="role"
+        placeholder="Role"
+        value={formulario.role}
         onChange={handleChange}
         className="w-full border rounded p-2"
       />
