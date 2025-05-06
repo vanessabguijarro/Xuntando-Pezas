@@ -1,5 +1,6 @@
 import mensaxeSecreto  from "./mensaje-secreto.png";
 import usuario from "./usuario.png";
+/// IMAXES HOME
 import usuarios from "./ImaxesHome/users.jpg";
 import clientes from "./ImaxesHome/customers.svg";
 import cliente from "./ImaxesHome/cliente.png";
@@ -11,7 +12,14 @@ import productos from "./ImaxesHome/productos.svg";
 import axustes from "./ImaxesHome/settings.svg";
 import usuarioHome from "./ImaxesHome/usuario.svg";
 import home from "./ImaxesMenus/home.png";
+import fotoFakeUser from "./UserTest.png";
+/// IMAXES MENU
 import iconoNewUser from "./ImaxesMenus/crearUser.png";
+import iconoHome from "./ImaxesMenus/home.png";
+import iconoClientes from "./ImaxesMenus/clientes.png";
+import iconoFacturas from "./ImaxesMenus/facturas.png";
+import iconoProductos from "./ImaxesMenus/productos.png";
+import iconoUsuarios from "./ImaxesMenus/usuarios.png";
 export const Imaxes = {
     mensaxeSecreto,
     usuario,
@@ -26,5 +34,11 @@ export const Imaxes = {
     axustes,
     usuarioHome,
     home,
-    iconoNewUser
+    fotoFakeUser,
+    iconoNewUser,
+    iconoHome,
+    iconoClientes,
+    iconoFacturas,
+    iconoProductos,
+    iconoUsuarios
 }

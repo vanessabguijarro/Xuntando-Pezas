@@ -39,10 +39,7 @@ button[type="submit"]{
     font-size: 25px;
 }
 
-.estilo-titulo{
-    color:black;
-    font-size: 40px;
-}
+
 .estilo-acceso{
     display: flex;
     justify-content: center;
