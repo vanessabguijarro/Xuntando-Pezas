@@ -2,9 +2,12 @@ import { Link, Outlet } from "react-router-dom";
 import { Imaxes } from "../assets/Imaxes";
 import { Icono } from "./Icono";
 import "../estilo/MenuLateral.App.css";
+import Boton from "./Boton";
+import { useDatosContext } from "../HOOKS/useDatosContext";
+import { IconoFuncion } from "./IconoFuncion";
 
 export default function MenuLateral({url}:{url:number}){
-    
+    const {logout} = useDatosContext();
     return <>
     <nav className="menu-lateral">
         <Link className="link-menu-lateral" to="/app">
@@ -35,9 +38,12 @@ export default function MenuLateral({url}:{url:number}){
                 <Link className="link-menu-lateral" to="/app/users">
                 <Icono imaxeUser={Imaxes.iconoUsuarios} estilo="icono-menu-lateral" />
                 <span style={{color:"white", width: "75px", fontSize:"10px",fontWeight: "100"}}>Usuarios</span>
-               {/* <img style={{width:"200px"}} src={Imaxes.usuarios}/> */}
+               
                 </Link>}
+                {/* <Boton estilo="" texto="Sair" funcion={logout}/> */}
+                <IconoFuncion imaxeUser={Imaxes.iconoSair} estilo="icono-menu-lateral-exit" funcion={logout}/>
     </nav>
+    
     <Outlet />
     </>
 }

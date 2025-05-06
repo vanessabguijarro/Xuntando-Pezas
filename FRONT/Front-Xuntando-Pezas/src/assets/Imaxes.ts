@@ -20,6 +20,7 @@ import iconoClientes from "./ImaxesMenus/clientes.png";
 import iconoFacturas from "./ImaxesMenus/facturas.png";
 import iconoProductos from "./ImaxesMenus/productos.png";
 import iconoUsuarios from "./ImaxesMenus/usuarios.png";
+import iconoSair from "./ImaxesMenus/exit.png";
 export const Imaxes = {
     mensaxeSecreto,
     usuario,
@@ -40,5 +41,6 @@ export const Imaxes = {
     iconoClientes,
     iconoFacturas,
     iconoProductos,
-    iconoUsuarios
+    iconoUsuarios,
+    iconoSair
 }
