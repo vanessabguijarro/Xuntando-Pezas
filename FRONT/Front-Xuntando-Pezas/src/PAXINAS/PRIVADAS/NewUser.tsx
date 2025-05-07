@@ -1,26 +1,54 @@
 import React, { useState } from "react";
-import "../../Componentes/PaxinaNewUser/index-newuser.css";
 import Formulario from "../../Componentes/PaxinaNewUser/Formulario";
 import ImaxenEngranaxe from "../../Componentes/PaxinaNewUser/ImaxenEngranaxe";
 import Avatar from "../../Componentes/PaxinaNewUser/Avatar";
 import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
-import { Imaxes } from "../../assets/imaxes_newuser";
-import "../../Componentes/PaxinaNewUser/index-newuser.css"
+import { DatosNewUser } from "../../TIPOS/INTERFACES.NewUser";
+import { Imaxes } from "../../assets/imaxes_newuser"; 
+import "../../Componentes/PaxinaNewUser/index-newuser.css";
 
 export default function NewUser() {
   const [imagenPerfil, setImagenPerfil] = useState<string>(Imaxes.avatar);
-  const [datosFormulario, setDatosFormulario] = useState({});
+  const [datosFormulario, setDatosFormulario] = useState<DatosNewUser>({
+    nombre: "",
+    apellidos: "",
+    email: "",
+    profesion: "",
+    rol: "",
+    imagen: null
+  });
+
+  const manejarCambioImagen = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setImagenPerfil(url);
+      setDatosFormulario({ ...datosFormulario, imagen: file });
+    }
+  };
+
+  const eliminarImagen = () => {
+    setImagenPerfil(Imaxes.avatar);
+    setDatosFormulario({ ...datosFormulario, imagen: null });
+  };
 
   const handleSubmit = async () => {
-    const datos = { ...datosFormulario, imagen: imagenPerfil };
     try {
+      const formData = new FormData();
+      formData.append("nombre", datosFormulario.nombre);
+      formData.append("apellidos", datosFormulario.apellidos);
+      formData.append("email", datosFormulario.email);
+      formData.append("profesion", datosFormulario.profesion);
+      formData.append("rol", datosFormulario.rol);
+      if (datosFormulario.imagen) {
+        formData.append("imagen", datosFormulario.imagen);
+      }
+
       const res = await fetch("http://localhost:3000/usuarios", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(datos)
+        body: formData,
       });
+
       const json = await res.json();
       console.log("Usuario creado correctamente:", json);
     } catch (err) {
@@ -32,24 +60,20 @@ export default function NewUser() {
     <div className="newuser-container">
       <div className="formulario-container">
         <h2>Profile</h2>
+
         <div className="avatar-y-botones">
           <Avatar
             imagen={imagenPerfil}
-            manejarCambioImagen={(e) => {
-              const file = e.target.files?.[0];
-              if (file) {
-                const url = URL.createObjectURL(file);
-                setImagenPerfil(url);
-              }
-            }}
-            eliminarImagen={() => setImagenPerfil(Imaxes.avatar)}
+            manejarCambioImagen={manejarCambioImagen}
+            eliminarImagen={eliminarImagen}
           />
         </div>
 
         <Formulario onSubmit={setDatosFormulario} />
+
       </div>
 
-      <div className="imagen-engranaje-container">
+      <div className="imagen-engranaxe-container">
         <ImaxenEngranaxe />
         <BotonEnviar onClick={handleSubmit} />
       </div>

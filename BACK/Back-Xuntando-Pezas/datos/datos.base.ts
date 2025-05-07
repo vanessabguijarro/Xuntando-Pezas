@@ -47,6 +47,16 @@ CREATE TABLE if not exists FACTURA(
                  
                 );
 
+CREATE TABLE IF NOT EXISTS USUARIO (
+                ID_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT,
+                NOMBRE_USUARIO                          TEXT(50),
+                APELLIDOS_USUARIO                       TEXT(50),
+                EMAIL_USUARIO                           TEXT(100),
+                PROFESION_USUARIO                       TEXT(100),
+                ROL_USUARIO                             TEXT(50),
+                IMAGEN_USUARIO                          TEXT(200)
+                );
+
 CREATE TABLE  if not exists FACTURAS(
                  ID_FACTURAS					 	    INTEGER PRIMARY KEY AUTOINCREMENT,
                  ID_CLIENTE_FACTURAS					INTEGER NOT NULL,
@@ -57,6 +67,8 @@ CREATE TABLE  if not exists FACTURAS(
                  FOREIGN KEY (CODIGO_FACTURA_FACTURAS) REFERENCES FACTURA (CODIGO_FACTURA) ON UPDATE CASCADE,
                  FOREIGN KEY (ID_CLIENTE_FACTURAS) REFERENCES CLIENTE (ID_CLIENTE)
                 );`
+
+
     
 }
 

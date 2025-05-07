@@ -30,6 +30,17 @@ CREATE TABLE  if not exists FACTURAS(
                  FOREIGN KEY (ID_CLIENTE_FACTURAS) REFERENCES CLIENTE (ID_CLIENTE)
                 );
 
+CREATE TABLE IF NOT EXISTS USUARIO (
+                   ID_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT,
+                   NOMBRE_USUARIO               TEXT(50),
+                   APELLIDOS_USUARIO            TEXT(50),
+                   EMAIL_USUARIO                TEXT(100),
+                   PROFESION_USUARIO            TEXT(100),
+                   ROL_USUARIO                  TEXT(50),
+                   IMAGEN_USUARIO               TEXT(200)
+);
+
+
 
 CREATE TABLE if not exists CLIENTE(
 

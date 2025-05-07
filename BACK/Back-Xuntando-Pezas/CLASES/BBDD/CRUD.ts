@@ -10,13 +10,14 @@ export class CRUD{
         this.conexion = conexion;
     }
 
-    async insertar(sentenciaSQL:string){
-        try{
-            (await this.conexion).run(`${sentenciaSQL}`)
-        }catch(e){
-            throw e
+    async insertar(sentenciaSQL: string, valores: any[]) {
+        try {
+          await (await this.conexion).run(sentenciaSQL, valores)
+        } catch (e) {
+          throw e
         }
-    }
+      }
+      
 
     async lerUnhaFila(sentenciaSQL:string,valorCampo:string):Promise<datoUser>{
         try{

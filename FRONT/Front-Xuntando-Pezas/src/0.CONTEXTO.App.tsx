@@ -1,4 +1,4 @@
-import React,{createContext, useState} from 'react';
+import React,{createContext, useState,} from 'react';
 import { useNavigate } from 'react-router-dom';
 //### A miña
 //export const LocalContext = createContext<object>({}); // inicializo
@@ -12,6 +12,8 @@ export const LocalContext = createContext<LocalContextType | null>(null);
 function Proveedorcontexto({ children }: { children: React.ReactNode }){
     const [isUserLogueado,setIsUserLogueado] = useState(false)
     let navigate = useNavigate();
+
+    
 
 
     const login = async (dato:any)=>{
