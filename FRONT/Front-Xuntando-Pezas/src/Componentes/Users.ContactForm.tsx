@@ -16,7 +16,9 @@ const ContactForm: React.FC = () => {
 
   const [status, setStatus] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -25,43 +27,49 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:3001/api/contact', formData);
-      console.log(res.data); // Puedes eliminar esta línea si no quieres mostrarlo en consola
+      console.log(res.data);
       setStatus('¡Mensaje enviado con éxito!');
-      setFormData({ name: '', email: '', message: '' }); // Limpiar formulario tras envío
-    } catch (error) {
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error: unknown) {
       console.error(error);
       setStatus('Error al enviar el mensaje');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Tu nombre"
-        value={formData.name}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Tu correo"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
-      <textarea
-        name="message"
-        placeholder="Tu mensaje"
-        value={formData.message}
-        onChange={handleChange}
-        required
-      />
-      <button type="submit">Enviar</button>
-      {status && <p>{status}</p>}
-    </form>
+    <>
+      <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Tu nombre"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          style={{ display: 'block', width: '100%', marginBottom: '10px' }}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Tu correo"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          style={{ display: 'block', width: '100%', marginBottom: '10px' }}
+        />
+        <textarea
+          name="message"
+          placeholder="Tu mensaje"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          rows={5}
+          style={{ display: 'block', width: '100%', marginBottom: '10px' }}
+        />
+        <button type="submit" style={{ padding: '8px 16px' }}>Enviar</button>
+      </form>
+      {status && <p style={{ textAlign: 'center', marginTop: '10px' }}>{status}</p>}
+    </>
   );
 };
 

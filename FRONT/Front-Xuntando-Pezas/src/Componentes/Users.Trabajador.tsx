@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// Removed unused axios import
 
 interface FormData {
   nombre: string;
@@ -22,7 +22,6 @@ const Trabajador: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/trabajadores', formData);
       alert('Trabajador añadido con éxito!');
       setFormData({ nombre: '', puesto: '', email: '' });
     } catch (error) {
