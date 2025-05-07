@@ -1,3 +1,5 @@
+
+import MenuLateral from "../../Componentes/MenuLateral";
 import Wrapper from "../../Componentes/Wrapper";
 import WrapperHeader from "../../Componentes/WrapperHeader";
 import { useDatosContext } from "../../HOOKS/useDatosContext";
@@ -17,12 +19,12 @@ const Home = ({icono}:{icono:string}) => {
 }
   return <>
   <Wrapper estilo={estiloHome}>
-    <WrapperHeader estilos={estilos} titulo="Home" icono={icono}/>
-    <LinksRutasPrivadasApp />
-    <h1>
-      <div>HOME</div>
-        <button onClick={logout}>Saír</button>
-    </h1>
+    
+      <MenuLateral url={0} />
+    <LinksRutasPrivadasApp >
+      <WrapperHeader estilos={estilos} titulo="Home" icono={icono}/>
+    </LinksRutasPrivadasApp>
+    
   </Wrapper>
   
   </>;
