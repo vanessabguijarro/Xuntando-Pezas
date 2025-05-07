@@ -4,6 +4,7 @@ import { LinksRutasPrivadasApp } from "../../RUTAS/Links.PAXINAS.PRIVADAS";
 
 const Home = () => {
   const { logout } = useDatosContext();
+  
   const estiloHome = "height-100vh"
   return <>
   <Wrapper estilo={estiloHome}>
