@@ -3,12 +3,12 @@ import { Imaxes } from "../assets/Imaxes"
 
 export const LinksRutasPrivadasApp = () => {
     let estilo = "links-dentro-app"
-    return <>
+    return <div>
     <nav className="estilo-nav-dentro">
         <ul>
-            <li>
+            {/* <li>
                 <Link to="/app">Home</Link>
-            </li>
+            </li> */}
             <li className={estilo}>
                 <Link  to="invoices">
                     <div style={{color:"white"}}>Facturas</div>
@@ -69,5 +69,5 @@ export const LinksRutasPrivadasApp = () => {
         
     </nav>
     <Outlet />
-    </>
+    </div>
 }

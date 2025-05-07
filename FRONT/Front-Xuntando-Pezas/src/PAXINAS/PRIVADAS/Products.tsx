@@ -4,8 +4,9 @@ import WrapperHeader from "../../Componentes/WrapperHeader";
 import "../../estilo/Products.App.css"
 import { DatosWrapperHeader } from "../../TIPOS/INTERFACES.App";
 const Products = ({icono}:{icono:string})=>{
-let estiloProducts = "estilo-paxinas-app height-100vh"
-let estiloSeccionCustomers = "estilo-seccion-products"
+    
+let estiloProducts = "estilo-paxinas-app height-100vh";
+let estiloSeccionCustomers = "estilo-seccion-products";
 
 let estilos : DatosWrapperHeader = {
     seccion:"header-paxina",
