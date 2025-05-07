@@ -1,17 +1,22 @@
-interface UserData {
+export interface UserData {
     username: string;
-}
-interface LocalContextType {
+  }
+  
+  export interface LocalContextType {
     login: (dato: any) => void;
     logout: () => void;
     isUserLogueado: boolean;
-}
-interface DatosUser {
-    username:string,
-    pwd:string
   }
-export type {
-    UserData,
-    LocalContextType,
-    DatosUser
-}
+  
+  export interface DatosUser {
+    username: string;
+    pwd: string;
+  }
+  
+  export interface DatosWrapperHeader {
+    titulo: string;
+    subtitulo?: string;
+    seccion?: string;
+    icono?: string;
+  }
+  
