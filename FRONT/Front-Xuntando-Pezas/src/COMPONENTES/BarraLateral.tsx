@@ -10,7 +10,7 @@ export default function BarraLateral() {
               ><img
                 src= {iconos.home}
                 alt= ""
-                title=""
+                title="Home"
                 className="icon-side"
             /></a>
           </li>
@@ -19,7 +19,7 @@ export default function BarraLateral() {
               ><img
                 src={iconos.customers}
                 alt="customers"
-                title=""
+                title="Customers"
                 className="icon-side"
             /></a>
           </li>
@@ -28,6 +28,7 @@ export default function BarraLateral() {
               ><img
                 src={iconos.invoices}
                 alt="invoices"
+                title="Invoices"
                 className="icon-side"
             /></a>
           </li>
@@ -36,6 +37,16 @@ export default function BarraLateral() {
               ><img
                 src={iconos.products}
                 alt="products"
+                title="Products"
+                className="icon-side"
+            /></a>
+          </li>
+          <li>
+            <a href=""
+              ><img
+                src={iconos.users}
+                alt="users"
+                title="Usuarios"
                 className="icon-side"
             /></a>
           </li>

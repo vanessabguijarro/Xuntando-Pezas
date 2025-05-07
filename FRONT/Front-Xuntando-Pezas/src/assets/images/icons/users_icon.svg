@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="256" height="256" version="1.1">
+ <title id="title3336">user</title>
+ <metadata id="metadata199">image/svg+xmluser</metadata>
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="g4407" transform="translate(41.4788 247.567) matrix(0.232471 0 0 0.227609 -33.0081 -234.103)">
+   <path d="m512,731.43l146.28,-219.43l219.43,0l0,512l-731.42,0l0,-512l219.43,0l146.28,219.43zm-219.42,-511.95c0,-121.13 98.2,-219.48 219.42,-219.48c120.98,0 219.42,98.35 219.42,219.48c0,121.17 -98.44,219.38 -219.42,219.38c-121.22,0 -219.42,-98.21 -219.42,-219.38" id="path4390"/>
+  </g>
+ </g>
+</svg>
