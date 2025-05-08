@@ -5,7 +5,7 @@ interface Usuario {
   id: string;
   nombre: string;
   apellidos: string;
-  mail: string;
+  email: string;
   status: string;
   role: string;
 }
@@ -31,7 +31,7 @@ const UsersPage: React.FC = () => {
               <li><strong>Id:</strong> {usuario.id}</li>
               <li><strong>Nombre:</strong> {usuario.nombre}</li>
               <li><strong>Apellidos:</strong> {usuario.apellidos}</li>
-              <li><strong>Mail:</strong> {usuario.mail}</li>
+              <li><strong>Mail:</strong> {usuario.email}</li>
               <li><strong>Status:</strong> {usuario.status}</li>
               <li><strong>Role:</strong> {usuario.role}</li>
             </ul>
@@ -57,7 +57,7 @@ interface Usuario {
   id: string;
   nombre: string;
   apellidos: string;
-  mail: string;
+  email: string;
   status: string;
   role: string;
 }
@@ -67,7 +67,7 @@ const Formulario: React.FC<Props> = ({ onSubmit }) => {
     id: "",
     nombre: "",
     apellidos: "",
-    mail: "",
+    email: "",
     status: "",
     role: ""
   });
@@ -111,9 +111,9 @@ const Formulario: React.FC<Props> = ({ onSubmit }) => {
       />
       <input
         type="email"
-        name="mail"
-        placeholder="Mail"
-        value={formulario.mail}
+        name="email"
+        placeholder="Email"
+        value={formulario.email}
         onChange={handleChange}
         className="w-full border rounded p-2"
       />
