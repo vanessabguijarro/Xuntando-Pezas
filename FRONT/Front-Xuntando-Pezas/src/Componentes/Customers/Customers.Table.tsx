@@ -20,7 +20,7 @@ export const CustomersTable = () => {
         //status
         const customersWithStatus = data.map((customer: Customer) => ({
           ...customer,
-          status: "Activo"
+          status: "Working"
         }));
         setCustomers(customersWithStatus);
       })
