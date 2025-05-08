@@ -10,22 +10,39 @@ const Formulario = ({ onSubmit }: Props) => {
     apellidos: "",
     email: "",
     profesion: "",
-    rol: ""
+    rol: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormulario({ ...formulario, [name]: value });
-    onSubmit({ ...formulario, [name]: value }); 
+    onSubmit({ ...formulario, [name]: value });
   };
 
   return (
     <div className="formulario-perfil">
-      <input type="text" name="nombre" placeholder="Nombre" value={formulario.nombre} onChange={handleChange} />
-      <input type="text" name="apellidos" placeholder="Apellidos" value={formulario.apellidos} onChange={handleChange} />
-      <input type="email" name="email" placeholder="Mail" value={formulario.email} onChange={handleChange} />
-      <input type="text" name="profesion" placeholder="Profesión" value={formulario.profesion} onChange={handleChange} />
-      <input type="text" name="rol" placeholder="Rol" value={formulario.rol} onChange={handleChange} />
+      <div className="row">
+        <div className="campo">
+          <label htmlFor="nombre">Nombre</label>
+          <input type="text"name="nombre"value={formulario.nombre} onChange={handleChange} />
+       </div>
+        <div className="campo">
+          <label htmlFor="apellidos">Apellidos</label>
+          <input type="text"name="apellidos"value={formulario.apellidos}onChange={handleChange} />
+        </div>
+      </div>
+      <div className="campo">
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" value={formulario.email} onChange={handleChange} />
+      </div>
+      <div className="campo">
+        <label htmlFor="profesion">Profesión</label>
+        <input type="text"name="profesion"value={formulario.profesion}onChange={handleChange}/>
+      </div>
+      <div className="campo">
+        <label htmlFor="rol">Rol</label>
+        <input type="text"name="rol" value={formulario.rol} onChange={handleChange}/>
+      </div>
     </div>
   );
 };

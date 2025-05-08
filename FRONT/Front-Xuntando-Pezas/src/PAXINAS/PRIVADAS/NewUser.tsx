@@ -59,24 +59,29 @@ export default function NewUser() {
   return (
     <div className="newuser-container">
       <div className="formulario-container">
-        <h2>Profile</h2>
+      <h2>Profile</h2>
 
-        <div className="avatar-y-botones">
-          <Avatar
-            imagen={imagenPerfil}
-            manejarCambioImagen={manejarCambioImagen}
-            eliminarImagen={eliminarImagen}
-          />
-        </div>
+      <div className="avatar-bloque">
+      <div className="avatar-contenedor">
+         <Avatar
+           imagen={imagenPerfil}
+           manejarCambioImagen={manejarCambioImagen}
+           eliminarImagen={eliminarImagen}
+    />
+  </div>
+</div>
+
 
         <Formulario onSubmit={setDatosFormulario} />
 
       </div>
 
       <div className="imagen-engranaxe-container">
-        <ImaxenEngranaxe />
-        <BotonEnviar onClick={handleSubmit} />
-      </div>
-    </div>
+  <div className="caja-imagen-blanca">
+    <img src={Imaxes.engranaxe} alt="Engranaje" />
+  </div>
+  <BotonEnviar onClick={handleSubmit} />
+   </div>
+ </div>
   );
 }

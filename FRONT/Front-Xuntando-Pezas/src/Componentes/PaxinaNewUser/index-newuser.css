@@ -1,138 +1,161 @@
-/* CONTENEDOR PRINCIPAL */
 .newuser-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 100px;
-    height: 100vh;
-    padding: 60px 100px;
-    box-sizing: border-box;
-    background-color: #f4f6ff;
-    overflow: hidden;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 85px;
+  height: 100vh;
+  padding: 60px 100px;
+  background-color: #f4f6ff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.formulario-container {
+  background-color: #fff;
+  padding: 40px;
+  width: 608px;
+  height: 644px;
+  box-shadow: 0px 11px 24px rgba(52, 113, 202, 0.31);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-container h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: #000;
+}
+
+/* Avatar y botones */
+.avatar-bloque {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  margin-bottom: 30px;
+}
+
+.avatar-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-contenedor img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.avatar-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 43px;
+}
+
+.boton-cambiar,
+.boton-borrar {
+  width: 160px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.boton-cambiar {
+  background-color: #1a1a40;
+  color: #fff;
+  border: none;
+}
+
+.boton-borrar {
+  background-color: #fff;
+  color: #1a1a40;
+  border: 1px solid #aaa4cb;
+}
+
+/* Inputs */
+.formulario-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-perfil .row {
+  display: flex;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="email"] {
+  border: 1px solid #4cbdeb;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+input[name="nombre"] {
+  width: 150px;
+}
+
+input[name="apellidos"],
+input[name="email"],
+input[name="profesion"],
+input[name="rol"] {
+  width: 343px;
+}
+
+/* Imagen engranaje y botón */
+.imagen-engranaxe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 15px;
+
+}
+.caja-imagen-blanca {
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.imagen-engranaxe-container img {
+  width: 300px;
+  height: 300px;
   
-  /* FORMULARIO CAJA IZQUIERDA */
-  .formulario-container {
-    background-color: #fff;
-    padding: 40px;
-    width: 608px;
-    height: 644px;
-    box-shadow: 0px 11px 24px rgba(52, 113, 202, 0.31);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  /* TÍTULO PROFILE */
-  .formulario-container h2 {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-    color: #000;
-  }
-  
-  /* AVATAR Y BOTONES */
-  .avatar-y-botones {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 60px;
-  }
-  
-  .avatar-contenedor img {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .avatar-botones {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .boton-cambiar,
-  .boton-borrar {
-    width: 171px;
-    height: 45px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .boton-cambiar {
-    background-color: #1a1a40;
-    color: #fff;
-    border: none;
-  }
-  
-  .boton-borrar {
-    background-color: #ffffff;
-    color: #1a1a40;
-    border: 1px solid #aaa4cb;
-  }
-  
-  /* FORMULARIO INPUTS */
-  .formulario-perfil {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .formulario-perfil .row {
-    display: flex;
-    gap: 10px;
-  }
-  
-  input[type="text"],
-  input[type="email"] {
-    border: 1px solid #4cbdeb;
-    padding: 8px 10px;
-    border-radius: 3px;
-    font-size: 14px;
-    background-color: #fff;
-  }
-  
-  /* INPUTS ESPECÍFICOS */
-  input[name="nombre"] {
-    width: 97px;
-  }
-  
-  input[name="apellidos"] {
-    width: 343px;
-  }
-  
-  input[name="mail"],
-  input[name="profesion"],
-  input[name="rol"] {
-    width: 343px;
-  }
-  
-  /* CONTENEDOR IMAGEN + BOTÓN ENVIAR */
-  .imagen-engranaxe-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 144px;
-  }
-  
-  .imagen-engranaxe-container img {
-    width: 400px;
-    height: 400px;
-  }
-  
-  /* BOTÓN ENVIAR */
-  .boton-enviar {
-    width: 260px;
-    height: 65px;
-    margin-top: 40px;
-    border-radius: 12px;
-    background-color: #448aff;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
-  
+}
+
+.boton-enviar {
+  width: 260px;
+  height: 65px;
+  margin-top: 148px;
+  border-radius: 12px;
+  background-color: #448aff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
