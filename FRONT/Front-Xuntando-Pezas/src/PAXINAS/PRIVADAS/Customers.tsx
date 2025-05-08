@@ -10,13 +10,14 @@ let estiloSeccionCustomers = "estilo-seccion-custormers";
 let estiloIconoUser = "icono-User";
     return <>
     <Wrapper estilo={estiloCustomers}>
-        <MenuLateral url={1}/>
+        
         <Wrapper estilo={estiloSeccionCustomers}>
             <Wrapper estilo="header-paxina">
                 <Titulo titulo="Customers" estilo="estilo-titulo"/>
                 <Icono imaxeUser={icono} estilo={estiloIconoUser}/>
             </Wrapper>
         </Wrapper>
+        <MenuLateral url={1}/>
     </Wrapper>
     </>
     
