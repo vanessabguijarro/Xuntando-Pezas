@@ -1,6 +1,5 @@
 // App.tsx
 import React, { useState } from 'react';
-
 import './App.css';
 import InvoiceHeader from '../../componentes/InvoiceHeader';
 import InvoiceDetails from '../../componentes/InvoiceDetails';
