@@ -118,6 +118,11 @@ body,
   box-shadow: 5px 5px 5px 5px rgb(220, 242, 250);
   margin-top: 25px;
 }
+.estilo-seccion-custormers{
+  background-color: #F5F5F5;
+  width: 100%;
+  flex: 1;
+}
 .icono-hamburguesa {
   float: right;
 }
