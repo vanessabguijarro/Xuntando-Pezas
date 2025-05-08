@@ -122,15 +122,19 @@ body,
   float: right;
 }
 
-.tabla-customers th,
-.tabla-customers td {
+
+.tabla-customers {
+  /* float: right;
+  width: 90%; */
+  margin-top: 40px;
+}
+.tabla-customers th{
   border: 1px solid #ddd;
   padding: 8px;
+  background-color: #d23f3f;
 }
-.tabla-customers {
-  float: right;
-  width: 90%;
-  margin-top: 40px;
+.body-tabla{
+  color: black;
 }
 
 .tabla-customers tr:nth-child(even) {

@@ -13,7 +13,7 @@ interface Props {
 
 export const CustomersTableBody: React.FC<Props> = ({ customers }) => {
   return (
-    <tbody>
+    <tbody className="body-tabla">
       {customers.map((customer, index) => (
         <tr key={index}>
           <td>{customer.name}</td>
