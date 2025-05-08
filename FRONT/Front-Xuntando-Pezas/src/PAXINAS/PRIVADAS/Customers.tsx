@@ -16,6 +16,7 @@ let estiloIconoUser = "icono-User";
                 <Titulo titulo="Customers" estilo="estilo-titulo"/>
                 <Icono imaxeUser={icono} estilo={estiloIconoUser}/>
             </Wrapper>
+            
         </Wrapper>
         <MenuLateral url={1}/>
     </Wrapper>
