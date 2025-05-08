@@ -1,10 +1,10 @@
 // App.tsx
 import React, { useState } from 'react';
+import InvoiceHeader from './componentes/InvoiceHeader';
+import InvoiceDetails from './componentes/InvoiceDetails';
+import InvoiceItemsTable from './componentes/InvoiceItemsTable';
+import FileUpload from './componentes/FileUpload';
 import './App.css';
-import InvoiceHeader from '../../Componentes/InvoiceHeader';
-import InvoiceDetails from '../../Componentes/InvoiceDetails';
-import InvoiceItemsTable from '../../Componentes/InvoiceItemsTable';
-import FileUpload from '../../Componentes/FileUpload';
 
 interface Customer {
   id: string;
@@ -18,15 +18,7 @@ interface Customer {
   shippingAddress: string;
   shippingCity: string;
 }
-interface InvoiceItem {
-    id: number;
-    serviceProduct: string;
-    quantity: number;
-    price: number;
-    unit: string;
-    vatRate: number;
-    total: number;
-  }
+
 function App() {
   const [isRecurringInvoice, setIsRecurringInvoice] = useState(false);
   const [customers] = useState<Customer[]>([
@@ -108,14 +100,12 @@ function App() {
 
   return (
     <div className="App">
-    
       <InvoiceHeader
         onCancel={handleCancel}
         onDone={handleDone}
         isRecurring={isRecurringInvoice}
         onRecurringChange={handleRecurringChange}
       />
-      
       <InvoiceDetails
         customers={customers}
         selectedCustomer={selectedCustomerId}
@@ -129,18 +119,15 @@ function App() {
         dueDate={dueDate}
         onDueDateChange={handleDueDateChange}
       />
-      
       <InvoiceItemsTable
         items={invoiceItems}
         onItemsChange={handleInvoiceItemsChange}
       />
-      
       <FileUpload
         onFileUploaded={(file) => {
           console.log('Archivo subido en App:', file);
         }}
       />
-      
     </div>
   );
 }
