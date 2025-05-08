@@ -4,7 +4,9 @@ import { storage } from './configuracion.multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
+import { getUsers } from './CONTROLADORES/USERS/getUsers';
 import fs from 'fs';
+
 
 dotenv.config();
 
@@ -17,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/acceso", accesoUser);
+app.get("/users", getUsers);
 
 app.listen(portNumber, () => {
   // fs module is already imported at the top level
