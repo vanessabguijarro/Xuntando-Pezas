@@ -1,4 +1,4 @@
-import ContainerBody from "../../COMPONENTES/ContainerBody";
+/* import ContainerBody from "../../COMPONENTES/ContainerBody";
 
 
 const CommonApp = () =>  { 
@@ -9,4 +9,4 @@ const CommonApp = () =>  {
     )
 };
 
-export default CommonApp
+export default CommonApp */

@@ -3,13 +3,13 @@
 //Wrapper has children from Main
 import BarraLateral from "./BarraLateral";
 import ContentWrapper from "./Wrapper";
-import "../assets/estilos_comp/ContainerBody.css"
+import "../assets/estilos_comp/ContainerBody.css";
 
-export default function ContainerBody( {children}: {children: React.ReactNode} ) {
+export default function ContainerBody( {children, tituloPax}: {children: React.ReactNode; tituloPax: string} ) {
   return (
     <div className="container">
         <BarraLateral></BarraLateral>
-        <ContentWrapper>
+        <ContentWrapper tituloPax={tituloPax}>
           {children}
         </ContentWrapper>
     </div>    

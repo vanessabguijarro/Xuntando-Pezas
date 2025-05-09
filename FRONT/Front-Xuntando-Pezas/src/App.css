@@ -10,26 +10,3 @@ body {
   min-height: 100vh; /* Ensure body takes up at least the full viewport height */
 }
 
-/* body > div#root {
-  display: contents;  /* Layout doesn't see the root div */
-
-
-
-/* body > div#root > div {
-  display: contents;  /* Layout doesn't see this div either */
-
-
- /* #root {
-  display: flex;
-  min-height: 100vh; 
-}  */
-
-/* #root { */
-
-  /* display: flex;
-  min-height: 100vh;  */
- /*  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center; */
-/* } */

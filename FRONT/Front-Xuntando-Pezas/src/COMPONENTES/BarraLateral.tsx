@@ -1,5 +1,6 @@
 import { iconos } from "../images";
-import "../assets/estilos_comp/BarraLat.css"
+import "../assets/estilos_comp/BarraLat.css";
+
 
 export default function BarraLateral() {
   return (
