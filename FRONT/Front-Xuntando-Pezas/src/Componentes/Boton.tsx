@@ -1,3 +1,4 @@
+import './Boton.css';
 export default function Boton({
     estilo,
     texto,

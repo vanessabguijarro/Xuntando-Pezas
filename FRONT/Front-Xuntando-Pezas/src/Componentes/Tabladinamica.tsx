@@ -1,3 +1,4 @@
+import './TablaDinamica.css';
 import React, { useState } from 'react';
 
 type Item = {

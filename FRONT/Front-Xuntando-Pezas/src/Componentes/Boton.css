@@ -1,0 +1,40 @@
+.boton-base {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  
+  .boton-primario {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .boton-primario:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+  }
+  
+  .boton-secundario {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .boton-secundario:hover {
+    background-color: #565e64;
+    transform: scale(1.03);
+  }
+  
+  .boton-peligro {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .boton-peligro:hover {
+    background-color: #a71d2a;
+    transform: scale(1.03);
+  }
+  

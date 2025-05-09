@@ -1,0 +1,23 @@
+.icono-redondo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;       /* Hace que la imagen sea circular */
+    object-fit: cover;        /* Asegura que la imagen se recorte bien */
+    border: 2px solid #ccc;   /* Borde suave */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .icono-pequeño {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .icono-grande {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;      /* Cuadrado con bordes redondeados */
+    object-fit: cover;
+  }
+  

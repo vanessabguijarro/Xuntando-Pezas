@@ -1,3 +1,4 @@
+import './Trabajador.css';
 import React, { useState } from 'react';
 // Removed unused axios import
 
