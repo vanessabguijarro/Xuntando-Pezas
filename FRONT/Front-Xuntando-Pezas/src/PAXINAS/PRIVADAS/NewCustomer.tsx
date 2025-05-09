@@ -1,169 +1,130 @@
 import { useState } from 'react';
 import styles from './NewCustomer.module.css';
-import illustration from '../../assets/customer-images/illustration.png';
-import profileIcon from '../../assets/customer-images/profile.png';
+import ilustracion from '../../assets/customer-images/illustration.png';
+import iconoPerfil from '../../assets/customer-images/profile.png';
 
-
-interface FormData {
-  nome: string;
-  apelidos: string;
+interface DatosFormulario {
+  nombre: string;
+  apellidos: string;
   empresa: string;
-  mail: string;
+  correo: string;
   profesion: string;
   rol: string;
 }
 
+const camposFormulario = [
+  { id: 'nombre', etiqueta: 'Nombre', tipo: 'text' },
+  { id: 'apellidos', etiqueta: 'Apellidos', tipo: 'text' },
+  { id: 'empresa', etiqueta: 'Empresa', tipo: 'text' },
+  { id: 'correo', etiqueta: 'Correo', tipo: 'email' },
+  { id: 'profesion', etiqueta: 'Profesión', tipo: 'text' },
+  { id: 'rol', etiqueta: 'Rol', tipo: 'text' }
+] as const;
+
+const SeccionImagenPerfil = ({ 
+  imagenPerfil, 
+  alCambiarImagen, 
+  alEliminarImagen 
+}: { 
+  imagenPerfil: string | null;
+  alCambiarImagen: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  alEliminarImagen: () => void;
+}) => (
+  <div className={styles.seccionPerfil}>
+    <h2>Perfil</h2>
+    <div className={styles.contenedorImagen}>
+      {imagenPerfil ? (
+        <img src={imagenPerfil} alt="Perfil" className={styles.imagenPerfil} />
+      ) : (
+        <div className={styles.imagenPredeterminada}>
+          <img src={iconoPerfil} alt="Perfil Predeterminado" className={styles.iconoUsuario} />
+        </div>
+      )}
+    </div>
+    <div className={styles.botonesImagen}>
+      <label className={styles.botonCambiar}>
+        Cambiar foto
+        <input
+          type="file"
+          accept="image/*"
+          onChange={alCambiarImagen}
+          style={{ display: 'none' }}
+        />
+      </label>
+      <button
+        type="button"
+        onClick={alEliminarImagen}
+        className={styles.botonEliminar}
+      >
+        Eliminar foto
+      </button>
+    </div>
+  </div>
+);
+
 const NewCustomer = () => {
-  const [profileImage, setProfileImage] = useState<string | null>(null);
-  const [formData, setFormData] = useState<FormData>({
-    nome: '',
-    apelidos: '',
+  const [imagenPerfil, setImagenPerfil] = useState<string | null>(null);
+  const [datosFormulario, setDatosFormulario] = useState<DatosFormulario>({
+    nombre: '',
+    apellidos: '',
     empresa: '',
-    mail: '',
+    correo: '',
     profesion: '',
     rol: ''
   });
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+  const manejarCambioImagen = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const archivo = event.target.files?.[0];
+    if (archivo) {
+      const lector = new FileReader();
+      lector.onloadend = () => setImagenPerfil(lector.result as string);
+      lector.readAsDataURL(archivo);
     }
   };
 
-  const handleDeleteImage = () => {
-    setProfileImage(null);
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const manejarCambioInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setDatosFormulario(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    console.log('Form Data:', { ...formData, profileImage });
-    // Aquí iría la lógica para enviar los datos al backend
+  const manejarEnvio = () => {
+    console.log('Datos del Formulario:', { ...datosFormulario, imagenPerfil });
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.formContainer}>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.profileSection}>
-            <h2>Profile</h2>
-            <div className={styles.imageContainer}>
-              {profileImage ? (
-                <img src={profileImage} alt="Profile" className={styles.profileImage} />
-              ) : (
-                <div className={styles.placeholderImage}>
-                  <img src={profileIcon} alt="Default Profile" className={styles.userIcon} />
-                </div>
-              )}
-            </div>
-            <div className={styles.imageButtons}>
-              <label className={styles.changeButton}>
-                Change picture
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  style={{ display: 'none' }}
+    <div className={styles.contenedor}>
+      <div className={styles.contenedorFormulario}>
+        <form onSubmit={manejarEnvio} className={styles.formulario}>
+          <SeccionImagenPerfil
+            imagenPerfil={imagenPerfil}
+            alCambiarImagen={manejarCambioImagen}
+            alEliminarImagen={() => setImagenPerfil(null)}
+          />
+
+          <div className={styles.camposFormulario}>
+            {camposFormulario.map(({ id, etiqueta, tipo }) => (
+              <div key={id} className={styles.grupoCampo}>
+                <label htmlFor={id}>{etiqueta}</label>
+                <input 
+                  type={tipo}
+                  id={id}
+                  name={id}
+                  value={datosFormulario[id]}
+                  onChange={manejarCambioInput}
                 />
-              </label>
-              <button
-                type="button"
-                onClick={handleDeleteImage}
-                className={styles.deleteButton}
-              >
-                Delete picture
-              </button>
-            </div>
-          </div>
-
-          <div className={styles.formFields}>
-            <div className={styles.fieldGroup}>
-              <label htmlFor="nome">Nome</label>
-              <input 
-                type="text" 
-                id="nome" 
-                name="nome"
-                value={formData.nome}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            <div className={styles.fieldGroup}>
-              <label htmlFor="apelidos">Apelidos</label>
-              <input 
-                type="text" 
-                id="apelidos" 
-                name="apelidos"
-                value={formData.apelidos}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            <div className={styles.fieldGroup}>
-              <label htmlFor="empresa">Empresa</label>
-              <input 
-                type="text" 
-                id="empresa" 
-                name="empresa"
-                value={formData.empresa}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            <div className={styles.fieldGroup}>
-              <label htmlFor="mail">Mail</label>
-              <input 
-                type="email" 
-                id="mail" 
-                name="mail"
-                value={formData.mail}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            <div className={styles.fieldGroup}>
-              <label htmlFor="profesion">Profesion</label>
-              <input 
-                type="text" 
-                id="profesion" 
-                name="profesion"
-                value={formData.profesion}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            <div className={styles.fieldGroup}>
-              <label htmlFor="rol">Rol</label>
-              <input 
-                type="text" 
-                id="rol" 
-                name="rol"
-                value={formData.rol}
-                onChange={handleInputChange}
-              />
-            </div>
+              </div>
+            ))}
           </div>
         </form>
       </div>
-      <div className={styles.rightSection}>
+      <div className={styles.seccionDerecha}>
         <img 
-          className={styles.illustration} 
-          src={illustration} 
-          alt="Illustration" 
+          className={styles.ilustracion} 
+          src={ilustracion} 
+          alt="Ilustración" 
         />
-        <button type="button" onClick={handleSubmit} className={styles.sendButton}>
-          Send
+        <button type="button" onClick={manejarEnvio} className={styles.botonEnviar}>
+          Enviar
         </button>
       </div>
     </div>

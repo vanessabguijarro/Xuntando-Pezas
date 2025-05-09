@@ -1,4 +1,4 @@
-.container {
+.contenedor {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -7,12 +7,12 @@
   gap: 4rem;
 }
 
-.formContainer {
+.contenedorFormulario {
   flex: 1;
   max-width: 800px;
 }
 
-.form {
+.formulario {
   background: white;
   padding: 2rem;
   border-radius: 8px;
@@ -20,7 +20,7 @@
   color: #000;
 }
 
-.rightSection {
+.seccionDerecha {
   flex-shrink: 0;
   width: 300px;
   display: flex;
@@ -29,22 +29,22 @@
   align-items: center;
 }
 
-.illustration {
+.ilustracion {
   width: 100%;
   margin-top: 4rem;
 }
 
-.profileSection {
+.seccionPerfil {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.profileSection h2 {
+.seccionPerfil h2 {
   color: #000;
   margin-bottom: 1rem;
 }
 
-.imageContainer {
+.contenedorImagen {
   width: 128px;
   height: 128px;
   margin: 0 auto 1rem;
@@ -56,13 +56,13 @@
   justify-content: center;
 }
 
-.profileImage {
+.imagenPerfil {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.placeholderImage {
+.imagenPredeterminada {
   width: 100%;
   height: 100%;
   display: flex;
@@ -70,20 +70,20 @@
   justify-content: center;
 }
 
-.userIcon {
+.iconoUsuario {
   width: 64px;
   height: 64px;
   color: #666;
 }
 
-.imageButtons {
+.botonesImagen {
   display: flex;
   gap: 1rem;
   justify-content: center;
   margin-top: 1rem;
 }
 
-.changeButton {
+.botonCambiar {
   background-color: #1a237e;
   color: white;
   padding: 0.5rem 1rem;
@@ -93,7 +93,7 @@
   font-size: 0.9rem;
 }
 
-.deleteButton {
+.botonEliminar {
   background-color: white;
   color: #666;
   padding: 0.5rem 1rem;
@@ -103,24 +103,24 @@
   font-size: 0.9rem;
 }
 
-.formFields {
+.camposFormulario {
   display: grid;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.fieldGroup {
+.grupoCampo {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.fieldGroup label {
+.grupoCampo label {
   font-weight: 500;
   color: #000;
 }
 
-.fieldGroup input {
+.grupoCampo input {
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -129,15 +129,14 @@
   background-color: white;
 }
 
-.fieldGroup input:focus {
+.grupoCampo input:focus {
   outline: none;
   border-color: #1a237e;
   box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
 }
 
-.sendButton {
+.botonEnviar {
   margin-top: 5rem;
-
   background-color: #4285f4;
   color: white;
   padding: 1rem 3rem;
@@ -149,6 +148,6 @@
   width: 200px;
 }
 
-.sendButton:hover {
+.botonEnviar:hover {
   background-color: #3367d6;
 } 
