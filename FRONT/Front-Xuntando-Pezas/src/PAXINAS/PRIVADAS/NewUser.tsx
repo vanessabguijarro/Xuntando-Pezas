@@ -1,10 +1,10 @@
 import MenuLateral from "../../Componentes/MenuLateral";
-import NewUserAdrian from "./NewUserAdrian";
+import NewUserAdri from "./NewUserAdri";
 
 const NewUser = ()=>{
-    return <>
-    <NewUserAdrian />
-    <MenuLateral /></>
+    return <div className="estilo-paxinas-app">
+    <NewUserAdri />
+    <MenuLateral /></div>
 }
 
 export default NewUser;
