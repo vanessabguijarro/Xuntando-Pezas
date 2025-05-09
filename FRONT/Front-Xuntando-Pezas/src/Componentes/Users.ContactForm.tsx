@@ -1,3 +1,4 @@
+import './ContactForm.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -38,7 +39,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
+      <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"
           name="name"
