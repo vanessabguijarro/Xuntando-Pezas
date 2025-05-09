@@ -15,9 +15,9 @@ const NewProductTemplate: React.FC = () => {
   return React.createElement(
     "div",
     { className: "new-product-template" },
-    React.createElement(Title, null, "New Product"),
+   /*  React.createElement(Title, null, "New Product"), */
     React.createElement(ProductForm, null),
-    React.createElement(MenuLateral,null)
+    /* React.createElement(MenuLateral,null) */
   );
 };
 
