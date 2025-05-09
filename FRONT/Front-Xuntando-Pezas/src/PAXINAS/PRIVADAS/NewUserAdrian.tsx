@@ -7,7 +7,7 @@ import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { Imaxes } from "../../assets/imaxes_newuser";
 import "../../Componentes/PaxinaNewUser/index-newuser.css"
 
-export default function NewUser() {
+export default function NewUserAdrian() {
   const [imagenPerfil, setImagenPerfil] = useState<string>(Imaxes.avatar);
   const [datosFormulario, setDatosFormulario] = useState({});
 

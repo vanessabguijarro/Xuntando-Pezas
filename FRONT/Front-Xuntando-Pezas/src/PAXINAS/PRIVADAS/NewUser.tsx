@@ -1,7 +1,10 @@
 import MenuLateral from "../../Componentes/MenuLateral";
+import NewUserAdrian from "./NewUserAdrian";
 
 const NewUser = ()=>{
-    return <><MenuLateral /><h1>Estou en NewUser</h1></>
+    return <>
+    <NewUserAdrian />
+    <MenuLateral /></>
 }
 
 export default NewUser;
