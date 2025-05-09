@@ -108,8 +108,8 @@ const NewInvoice = ()=>{
         };
 
 
-    return <>
-        {/* <MenuLateral url={}/> */}
+    return <div className="estilo-paxinas-app">
+        <div className="flex-1">
         <InvoiceHeader
         onCancel={handleCancel}
         onDone={handleDone}
@@ -139,7 +139,9 @@ const NewInvoice = ()=>{
           console.log('Archivo subido en App:', file);
         }}
       />
-    </>
+      </div>
+      <MenuLateral />
+    </div>
 }
 
 export default NewInvoice;
