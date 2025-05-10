@@ -3,11 +3,11 @@ import MenuLateral from "../../Componentes/MenuLateral";
 
 
 const NewProduct = ()=>{
-    return <div className="proba-centrado-NewProduct">
+    return <div>
                 <div >
                     <NewProductTemplate />
                 </div> 
-                <MenuLateral />
+                {/* <MenuLateral /> */}
     </div>
 }
 

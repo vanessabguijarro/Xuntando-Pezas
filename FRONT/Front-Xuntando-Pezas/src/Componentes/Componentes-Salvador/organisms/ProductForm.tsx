@@ -3,6 +3,7 @@ import InputGroup from '../molecules/InputGroup';
 import ImageUploader from '../molecules/ImageUploader';
 import Button from '../atoms/Button';
 import './ProductForm.css';
+import MenuLateral from '../../MenuLateral';
 
 interface ProductFormData {
   nome: string;
@@ -87,6 +88,8 @@ const ProductForm: React.FC = () => {
   };
 
   return (
+    <div className="proba-centrado-NewProduct">
+    <div className="centrando-NewProducto-Salvador">
     <form className="product-form" onSubmit={handleSubmit}>
       {/* Botones posicionados arriba a la derecha */}
 
@@ -104,6 +107,9 @@ const ProductForm: React.FC = () => {
       Guardar
       </Button>
     </form>
+    </div>
+    <MenuLateral />
+    </div>
   );
 };
 
