@@ -35,29 +35,30 @@ export class Comunicacion{
         }else{
             
             let datoEnviados : RequestInit = {
-            method: 'POST',
-            headers:{
-                "Content-type":"application/json"
-            },
-            body: JSON.stringify(datos)
-        }
-        console.log("endpoint ",endpoint,datoEnviados)
-        let resposta = await fetch(endpoint,datoEnviados); //  Son os datos que enviamos co endpoint
-        this.datos = await resposta.json();         //  En resposta é que me está a enviar o Server
+                method: 'POST',
+                headers:{
+                    "Content-type":"application/json"
+                },
+                body: JSON.stringify(datos)
+            }
+            console.log("endpoint ",endpoint,datoEnviados)
+            let resposta = await fetch(endpoint,datoEnviados); //  Son os datos que enviamos co endpoint
+            
+            
+            this.datos = await resposta.json();         //  En resposta é que me está a enviar o Server
+            //console.log("await resposta.json()",await resposta.json() )
+            
         }
         
     }
-    static async metodoPaxinaGet(endpoint: string,datos:any){
-        let resposta = await fetch(endpoint,datos); //  Son os datos que enviamos co endpoint
-        this.paxina = await resposta.text();         //  En resposta é que me está a enviar o Server
-    }
+    
     static isUser():Boolean{
         let isUser = false;
         let datoResposta : TipoRespostaServidor ={
             estado: this.datos.status,
             mensage: this.datos.statusText
         }
-        
+        console.log("estou en isUser ",datoResposta.mensage)
         if(datoResposta.mensage != "non é o usuario correcto"){
             localStorage.setItem("usuario",datoResposta.mensage);
             isUser = true;

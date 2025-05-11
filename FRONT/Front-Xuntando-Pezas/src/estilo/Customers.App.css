@@ -4,3 +4,8 @@
     width: 100%;
     flex: 1;
 }
+
+.estilo-icono-customers{
+    width: 20px;
+    cursor: pointer;
+}

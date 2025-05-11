@@ -4,7 +4,7 @@ import { conectarDB } from '../../configuracion.sqlite';
 export const getCustomers = async (req: Request, res: Response) => {
   try {
     const db = await conectarDB();
-    const customers = await db.all("SELECT name, email, role FROM customers"); 
+    const customers = await db.all("SELECT id,name, email, role FROM customers"); 
     res.json(customers);
   } catch (error) {
     console.error(error);

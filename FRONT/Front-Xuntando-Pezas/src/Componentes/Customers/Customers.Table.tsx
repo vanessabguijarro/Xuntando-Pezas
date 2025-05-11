@@ -26,11 +26,14 @@ export const CustomersTable = () => {
       })
       .catch((error) => console.error("Error al obtener customers:", error));
   }, []);
-
+const eventoModificarEliminar = (id:number,accion:string) => (e: React.MouseEvent) =>{
+  console.log("id ",id)
+  console.log("accion ",accion)
+}
   return (
     <table className="tabla-customers">
       <CustomersTableHeader />
-      <CustomersTableBody customers={customers} />
+      <CustomersTableBody customers={customers} funcionEvento={eventoModificarEliminar}/>
     </table>
   );
 };

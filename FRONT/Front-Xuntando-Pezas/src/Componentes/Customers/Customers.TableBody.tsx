@@ -1,6 +1,9 @@
 import React from "react";
-
+import { IconoFuncion } from "../IconoFuncion";
+import { Imaxes } from "../../assets/Imaxes";
+import "../../estilo/Customers.App.css";
 interface Customer {
+  id:number;
   name: string;
   email: string;
   status: string;
@@ -9,9 +12,11 @@ interface Customer {
 
 interface Props {
   customers: Customer[];
+  funcionEvento: (id:number,accion:string) => (event: React.MouseEvent) => void
 }
 
-export const CustomersTableBody: React.FC<Props> = ({ customers }) => {
+export const CustomersTableBody: React.FC<Props> = ({ customers,funcionEvento }) => {
+  
   return (
     <tbody className="body-tabla">
       {customers.map((customer, index) => (
@@ -20,7 +25,10 @@ export const CustomersTableBody: React.FC<Props> = ({ customers }) => {
           <td>{customer.email}</td>
           <td>{customer.status}</td>
           <td>{customer.role}</td>
-          <td>✏️ 🗑️</td>
+          <td>
+            <IconoFuncion imaxeUser={Imaxes.editar} estilo="estilo-icono-customers" funcion={funcionEvento(customer.id,"editar")}/>
+            <IconoFuncion imaxeUser={Imaxes.papelera} estilo="estilo-icono-customers" funcion={funcionEvento(customer.id,"borrar")}/>
+          </td>
         </tr>
       ))}
     </tbody>

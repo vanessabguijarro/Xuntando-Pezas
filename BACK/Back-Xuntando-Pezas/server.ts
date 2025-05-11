@@ -15,7 +15,7 @@ const upload = multer({ storage: storage })
 app.use(cors())
 app.use(express.json())
 
-app.post("/acceso",accesoUser)
+app.post("/acceso",accesoUser);
 app.get("/customers", getCustomers);
 
 app.listen(portNumber, 'localhost', () => {
