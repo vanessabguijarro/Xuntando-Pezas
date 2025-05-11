@@ -25,6 +25,7 @@ import iconoSair from "./ImaxesMenus/exit.png";
 /// IMAXES CUSTOMERS
 import editar from "./customer-images/editar.svg";
 import papelera from "./customer-images/papelera-48.png";
+import gardar from "./customer-images/guardar-48.png";
 
 export const Imaxes = {
     mensaxeSecreto,
@@ -49,5 +50,6 @@ export const Imaxes = {
     iconoUsuarios,
     iconoSair,
     editar,
-    papelera
+    papelera,
+    gardar
 }
