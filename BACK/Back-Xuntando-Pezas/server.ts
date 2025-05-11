@@ -4,7 +4,7 @@ import { storage } from './configuracion.multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
-import { getCustomers } from './CONTROLADORES/CUSTOMERS/getCustomers';
+import { getCustomers, putCustomers } from './CONTROLADORES/CUSTOMERS';
 
 dotenv.config();
 const portNumber = 3000;
@@ -17,6 +17,10 @@ app.use(express.json())
 
 app.post("/acceso",accesoUser);
 app.get("/customers", getCustomers);
+
+// ENDPOINTS DE MODIFICACION - PUT
+
+app.put("/customers/editar/:id",putCustomers)
 
 app.listen(portNumber, 'localhost', () => {
     console.log('Listening on localhost:' + portNumber);

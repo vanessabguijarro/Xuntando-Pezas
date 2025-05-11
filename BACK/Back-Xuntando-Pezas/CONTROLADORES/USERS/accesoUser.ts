@@ -23,14 +23,13 @@ export const accesoUser = async (req:Request,res:Response): Promise<void>=>{
         const usuarioValido = isUser(req.body,datoUserLido)
         //const usuarioValido = isUser2(req.body,datoUserLido)
         console.log("usuarioValido ",usuarioValido)
-        if (datoUserLido) {
-             const token = Jwt.sign({ user: username }, process.env.SEGREDO || "clavePorDefecto");
-            res.json({ token });
-        }else{
-                console.log("dentro usuarioValido ",usuarioValido)
+        if (!datoUserLido) {
+             console.log("dentro usuarioValido ",usuarioValido)
              res.status(401).json({ mensaje: "Usuario o contraseña incorrectos" });
         }
-           
+           const token = Jwt.sign({ user: username }, process.env.SEGREDO || "clavePorDefecto");
+           console.log("token ",token)
+            res.send({ token:token });
         
     } catch (error) {
         console.error("Error al firmar el token:", error);

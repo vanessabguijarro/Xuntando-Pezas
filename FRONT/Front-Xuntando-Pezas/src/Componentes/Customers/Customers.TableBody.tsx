@@ -12,7 +12,7 @@ interface Customer {
 
 interface Props {
   customers: Customer[];
-  funcionEvento: (id:number,accion:string) => (event: React.MouseEvent) => void
+  funcionEvento: (customer:Customer,accion:string) => (event: React.MouseEvent) => void
 }
 
 export const CustomersTableBody: React.FC<Props> = ({ customers,funcionEvento }) => {
@@ -26,8 +26,8 @@ export const CustomersTableBody: React.FC<Props> = ({ customers,funcionEvento })
           <td>{customer.status}</td>
           <td>{customer.role}</td>
           <td>
-            <IconoFuncion imaxeUser={Imaxes.editar} estilo="estilo-icono-customers" funcion={funcionEvento(customer.id,"editar")}/>
-            <IconoFuncion imaxeUser={Imaxes.papelera} estilo="estilo-icono-customers" funcion={funcionEvento(customer.id,"borrar")}/>
+            <IconoFuncion imaxeUser={Imaxes.editar} estilo="estilo-icono-customers" funcion={funcionEvento(customer,"editar")}/>
+            <IconoFuncion imaxeUser={Imaxes.papelera} estilo="estilo-icono-customers" funcion={funcionEvento(customer,"borrar")}/>
           </td>
         </tr>
       ))}

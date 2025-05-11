@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CustomersTableBody } from "./Customers.TableBody";
 import { CustomersTableHeader } from "./Customers.TableHeader";
+import { Comunicacion } from "../../COMUNICACION.HTTP/Comunicacion.App";
 
 interface Customer {
   id: number;
@@ -26,9 +27,12 @@ export const CustomersTable = () => {
       })
       .catch((error) => console.error("Error al obtener customers:", error));
   }, []);
-const eventoModificarEliminar = (id:number,accion:string) => (e: React.MouseEvent) =>{
-  console.log("id ",id)
+const eventoModificarEliminar = (customer:Customer,accion:string) => (e: React.MouseEvent) =>{
+  console.log("customer ",customer.id)
   console.log("accion ",accion)
+  ///ENDPOINT customers/editar/:id -> `/customers/editar/${customer.id}`
+  Comunicacion.metodoPut(`/customers/editar/${customer.id}`,customer)
+
 }
   return (
     <table className="tabla-customers">
