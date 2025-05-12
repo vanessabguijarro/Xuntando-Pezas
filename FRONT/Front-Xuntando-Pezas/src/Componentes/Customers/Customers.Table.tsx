@@ -14,7 +14,7 @@ interface Customer {
 export const CustomersTable = () => {
   const [customers, setCustomers] = useState<Customer[]>([]);
   const [data, setData] = useState<Customer[]>([{id:0,name:"",email:"",status:"",role:""}])
-  const [editingRowId, setEditingRowId] = useState<number | null>(null);
+  const [editingRowId, setEditingRowId] = useState<boolean | null>(null);
   useEffect(() => {
     fetch("http://localhost:3000/customers")
       .then((res) => res.json())

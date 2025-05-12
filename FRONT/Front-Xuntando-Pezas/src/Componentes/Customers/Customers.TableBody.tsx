@@ -1,3 +1,4 @@
+
 import { IconoFuncion } from "../IconoFuncion";
 import { Imaxes } from "../../assets/Imaxes";
 import "../../estilo/Customers.App.css";
@@ -41,6 +42,11 @@ export const CustomersTableBody: React.FC<Props> = ({ customers,estado,setEdit,h
             console.log("clico ",customer.id)
             setEdit(customer.id)}}>
               Editar
+          </button>
+          <button onClick={() => {
+            console.log("clico ",customer.id)
+            setEdit(0)}}>
+              gardar
           </button>
             <IconoFuncion
               imaxeUser={Imaxes.papelera}
