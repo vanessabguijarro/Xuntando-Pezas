@@ -2,7 +2,7 @@ import Jwt from "jsonwebtoken";
 import { datoUser, datoUserEisUser, promesaEDatos } from "./Tipos/bbdd.tipos";
 import { formAcceso } from "./Tipos/tipos.app";
 
-const isUser = (userFormAcceso:formAcceso,usuarioBBDD: datoUser):boolean => {
+const isUserForm = (userFormAcceso:formAcceso,usuarioBBDD: datoUser):boolean => {
     return userFormAcceso.username === usuarioBBDD.NAME_USER_TRABALLADOR && userFormAcceso.pwd === usuarioBBDD.PWD_TRABALLADOR
 }
 const isUser2 = (userFormAcceso:formAcceso,usuarioBBDD: promesaEDatos):boolean => {
@@ -24,6 +24,6 @@ const tokenUser = (userFormAcceso:formAcceso, res:Response):void =>{
      res.json({ token });
 }*/
 export {
-    isUser,
+    isUserForm,
     isUser2
 }
