@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { IconoFuncion } from "../IconoFuncion";
 import { Imaxes } from "../../assets/Imaxes";
 import "../../estilo/Customers.App.css";
@@ -13,29 +12,21 @@ interface Customer {
 type Props = {
   customers: Customer[];
   funcionEvento: (customer: Customer, accion: string) => () => void;
-  Imaxes: any; // o pon el tipo real de Imaxes
+  handleChange: (id: number, key: string, value: string) => void;
+  estado: number | null;
+  setEdit: React.Dispatch<React.SetStateAction<number | null>>;
 };
-export const CustomersTableBody: React.FC<Props> = ({ customers,funcionEvento }) => {
-  const [firstName, setFirstName] = useState('dfadfadf');
-  const [data, setData] = useState<Customer[]>([{id:0,name:"",email:"",status:"",role:""}])
+export const CustomersTableBody: React.FC<Props> = ({ customers,estado,setEdit,handleChange,funcionEvento }) => {
+ 
 
 
-  useEffect(() => {
-    setData(customers);
-  }, [customers]);
-
-   const handleChange = (id: number, key: keyof Customer, value: string) => {
-    setData((prev) =>
-      prev.map((row) => (row.id === id ? { ...row, [key]: value } : row))
-    );
-  };
-
-  return (<>{/* <input value={firstName} onChange={e => setFirstName(e.target.value)}/> */}
+  return (<>
     <tbody className="body-tabla">
       {customers.map((customer) => (
         <tr key={customer.id}>
           <td>
             <input
+              readOnly={estado !== customer.id}
               value={customer.name}
               onChange={(e) =>
                 handleChange(customer.id, "name", e.target.value)
@@ -46,11 +37,11 @@ export const CustomersTableBody: React.FC<Props> = ({ customers,funcionEvento })
           <td>{customer.status}</td>
           <td>{customer.role}</td>
           <td>
-            <IconoFuncion
-              imaxeUser={Imaxes.editar}
-              estilo="estilo-icono-customers"
-              funcion={funcionEvento(customer, "editar")}
-            />
+          <button onClick={() => {
+            console.log("clico ",customer.id)
+            setEdit(customer.id)}}>
+              Editar
+          </button>
             <IconoFuncion
               imaxeUser={Imaxes.papelera}
               estilo="estilo-icono-customers"
