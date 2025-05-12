@@ -34,9 +34,21 @@ export const CustomersTableBody: React.FC<Props> = ({ customers,estado,setEdit,h
               }
             />
           </td>
-          <td>{customer.email}</td>
-          <td>{customer.status}</td>
-          <td>{customer.role}</td>
+          <td><input readOnly={estado !== customer.id}
+              value={customer.email}
+              onChange={(e) =>
+                handleChange(customer.id, "email", e.target.value)
+              }/></td>
+          <td><input readOnly={estado !== customer.id}
+              value={customer.status}
+              onChange={(e) =>
+                handleChange(customer.id, "status", e.target.value)
+              } /></td>
+          <td><input readOnly={estado !== customer.id}
+              value={customer.role}
+              onChange={(e) =>
+                handleChange(customer.id, "role", e.target.value)
+              } /></td>
           <td>
           <button onClick={() => {
             console.log("clico ",customer.id)
