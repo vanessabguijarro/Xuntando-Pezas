@@ -68,7 +68,9 @@ export class Comunicacion{
                 body: JSON.stringify(datos)
             }
            let datoString = adaptoToken()
+
             console.log("datosEnviados ",datos,endpoint,datoString)
+            
             let resposta = await fetch(`http://localhost:3000${endpoint}`,datoEnviados); //  Son os datos que enviamos co endpoint
             this.datos = await resposta.json();         //  En resposta é que me está a enviar o Server
             console.log("this.datos ", this.datos)

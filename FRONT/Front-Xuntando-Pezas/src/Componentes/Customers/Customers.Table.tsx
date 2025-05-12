@@ -34,7 +34,7 @@ const eventoModificarEliminar = (customer:Customer,accion:string) => (e: React.M
   console.log("customer ",customer.id)
   console.log("accion ",accion)
   ///ENDPOINT customers/editar/:id -> `/customers/editar/${customer.id}`
-  //Comunicacion.metodoPut(`/customers/editar/${customer.id}`,customer)
+  Comunicacion.metodoPut(`/customers/editar/${customer.id}`,customer)
 
 }
 
