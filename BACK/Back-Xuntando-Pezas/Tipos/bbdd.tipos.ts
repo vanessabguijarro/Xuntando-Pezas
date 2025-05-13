@@ -11,7 +11,8 @@ export type datoUser = {
 export type datoUserEisUser = datoUser | boolean | undefined  
 export type promesaEDatos = Promise<datoUserEisUser>
 type instruccions = {
-    sqlLecturaUser: string
+    sqlLecturaUser: string,
+    sqlLogin: string
 }
 
 export type sentencias = {

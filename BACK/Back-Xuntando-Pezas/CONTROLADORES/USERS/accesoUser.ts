@@ -27,7 +27,7 @@ export const accesoUser = async (req:Request,res:Response): Promise<void>=>{
              console.log("dentro usuarioValido ",usuarioValido)
              res.status(401).json({ mensaje: "Usuario o contraseña incorrectos" });
         }
-            const token = Jwt.sign({ user: username }, process.env.SEGREDO || "clavePorDefecto");
+            const token = Jwt.sign({ user: username,pwd:pwd }, process.env.SEGREDO || "clavePorDefecto");
             console.log("token ",token)
             res.send({ token:token });
         

@@ -3,8 +3,8 @@ import multer from 'multer';
 import { storage } from './configuracion.multer';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { accesoUser } from './CONTROLADORES/USERS/accesoUser';
 import { deleteCustomers, getCustomers, putCustomers } from './CONTROLADORES/CUSTOMERS';
+import { accesoUser, isUser } from './CONTROLADORES/USERS';
 import { endpoints } from './datos/endpoints';
 
 dotenv.config();
@@ -21,7 +21,7 @@ app.get(endpoints.customers, getCustomers);
 
 // ENDPOINTS DE MODIFICACION - PUT
 
-app.put(endpoints.customersEditar,putCustomers)
+app.put(endpoints.customersEditar,isUser,putCustomers)
 
 // ENDPOINTS DE BORRADO - DELETE
 
