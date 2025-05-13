@@ -25,7 +25,7 @@ app.put(endpoints.customersEditar,isUser,putCustomers)
 
 // ENDPOINTS DE BORRADO - DELETE
 
-app.delete(endpoints.customersBorrar,deleteCustomers)
+app.delete(endpoints.customersBorrar,isUser,deleteCustomers)
 
 app.listen(portNumber, 'localhost', () => {
     console.log('Listening on localhost:' + portNumber);
