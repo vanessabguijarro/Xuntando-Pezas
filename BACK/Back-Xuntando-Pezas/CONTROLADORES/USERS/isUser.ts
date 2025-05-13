@@ -30,17 +30,16 @@ export const isUser = async (req: AuthenticatedRequest, res: Response,nextFuncti
         if (typeof tokenInfo === "object" && tokenInfo !== null) {
             console.log("tokenInfo ",tokenInfo)
             const { user, pwd } = tokenInfo as JwtPayload;
-            console.log("user ? ", user);
-            console.log("pwd ? ", pwd);
+            
             const instanciaBBDD = execucionTodoBBDD();
             const datoArray : [string,string] = [user,pwd];
-            console.log("datoArray ",datoArray)
+            
             const datoUserLido: datoUser = await instanciaBBDD.lerUnhaFila2Campos(
                 listaInstruccions.instruccion.sqlLogin,
                 datoArray,
                 
             ); 
-            console.log("datoUserLido ",datoUserLido)
+         
             if(!datoUserLido || datoUserLido === null || datoUserLido === undefined){
                 throw new HttpError("Usuario o contraseña incorrectos", 403);
             }
@@ -49,7 +48,7 @@ export const isUser = async (req: AuthenticatedRequest, res: Response,nextFuncti
             console.log("El token no tiene formato válido (esperado: JwtPayload)");
         }
 
-        //res.status(200).send("Usuario autenticado correctamente");
+       
 
     } catch (error: any) {
         console.error("Error de autenticación:", error);
