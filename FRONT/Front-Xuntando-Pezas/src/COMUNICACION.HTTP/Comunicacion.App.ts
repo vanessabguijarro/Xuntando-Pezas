@@ -62,8 +62,8 @@ export class Comunicacion{
         let datoEnviados : RequestInit = {
                 method: 'PUT',
                 headers:{
-                "Authorization": adaptoToken(),
-                "Content-Type":"application/json"
+                    "Authorization": adaptoToken(),
+                    "Content-Type":"application/json"
                 },
                 body: JSON.stringify(datos)
             }

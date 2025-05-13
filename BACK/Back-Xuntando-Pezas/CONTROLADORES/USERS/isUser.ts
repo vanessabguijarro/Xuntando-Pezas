@@ -3,9 +3,9 @@ import Jwt,{JwtPayload } from "jsonwebtoken";
 import { execucionTodoBBDD } from "../../instruccions.base.sqlite";
 import { listaInstruccions } from "../../datos/lista.instruccions.bbdd.israel";
 import { datoUser } from "../../Tipos/bbdd.tipos";
-import { isUserForm } from "../../helpers";
 import { AuthenticatedRequest } from "../../Tipos/request.extendido"; // archivo donde defines el tipo extendido
-import { datoTraballador } from "../../Tipos/tipos.app";
+import { console } from "inspector";
+
 class HttpError extends Error {
     httpStatus: number;
 
@@ -17,29 +17,32 @@ class HttpError extends Error {
 }
 
 export const isUser = async (req: AuthenticatedRequest, res: Response,nextFunction:()=>void): Promise<void> => {
-    //const { username, pwd } = req.body;
+    
     const { authorization } = req.headers;
 
     try {
+        console.log("authorization ",authorization)
         if (!authorization) {
             throw new HttpError("Falta cabeceira de autorización", 401);
         }
 
         const tokenInfo = Jwt.verify(authorization, process.env.SEGREDO || "default_secret");
-        
+        console.log("tokenInfo ")
+
         if (typeof tokenInfo === "object" && tokenInfo !== null) {
-            console.log("tokenInfo ",tokenInfo)
-            const { user, pwd } = tokenInfo as JwtPayload;
             
-            const instanciaBBDD = execucionTodoBBDD();
+            const { user, pwd } = tokenInfo as JwtPayload;
             const datoArray : [string,string] = [user,pwd];
+            
+            console.log("datoArray ",datoArray)
+            const instanciaBBDD = execucionTodoBBDD();
             
             const datoUserLido: datoUser = await instanciaBBDD.lerUnhaFila2Campos(
                 listaInstruccions.instruccion.sqlLogin,
-                datoArray,
-                
+                datoArray
             ); 
          
+            // FILTRO 
             if(!datoUserLido || datoUserLido === null || datoUserLido === undefined){
                 throw new HttpError("Usuario o contraseña incorrectos", 403);
             }
