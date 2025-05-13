@@ -29,11 +29,11 @@ export class CRUD{
         }
         
     }
-    async lerUnhaFila2(sentenciaSQL:string,valorCampo:string):promesaEDatos{
+    async lerUnhaFila2Campos(sentenciaSQL:string,valorCampo:[string,string]):Promise<datoUser>{
         try{
-           
-            let dato = (await this.conexion).get(`${sentenciaSQL}`,`${valorCampo}`)
-            console.log("dato en funcion ler ",await dato)
+           console.log('en lerUnhaFila2Campos ',sentenciaSQL,valorCampo)
+            let dato = (await this.conexion).get(`${sentenciaSQL}`,valorCampo)
+            console.log("dato en funcion lerUnhaFila2Campos ",await dato)
             
             return await dato
         }catch(e){
