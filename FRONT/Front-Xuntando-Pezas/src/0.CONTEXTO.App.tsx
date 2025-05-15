@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 //
 import {LocalContextType} from './TIPOS/INTERFACES.App'
 import { Comunicacion } from './COMUNICACION.HTTP/Comunicacion.App';
-import { endpoints, urlServidorLocal } from './DATOS/datos';
+import { endpoints, urlServidorMaquinaVirtual  } from './DATOS/datos';
 
 export const LocalContext = createContext<LocalContextType | null>(null);
 
@@ -16,7 +16,7 @@ function Proveedorcontexto({ children }: { children: React.ReactNode }){
 
     const login = async (dato:any)=>{
         
-        let oToken = await Comunicacion.metodoPost(`${urlServidorLocal}/${endpoints.acceso}`,dato);
+        let oToken = await Comunicacion.metodoPost(`${urlServidorMaquinaVirtual}/${endpoints.acceso}`,dato);
         console.log("o Token ?????",oToken)
         if(oToken !== undefined){
             console.log("Entras?????")
