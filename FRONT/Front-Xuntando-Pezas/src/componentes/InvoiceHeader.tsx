@@ -1,6 +1,6 @@
 import React from 'react';
-import '../componentes/InvoiceHeader.css'; // Archivo de estilos opcional
-
+//import '../componentes/InvoiceHeader.css'; // Archivo de estilos opcional
+import './InvoiceHeader.css';
 interface InvoiceHeaderProps {
   onCancel: () => void;
   onDone: () => void;

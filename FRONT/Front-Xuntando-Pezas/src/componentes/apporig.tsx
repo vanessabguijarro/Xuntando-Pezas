@@ -1,10 +1,11 @@
 // App.tsx
-import React, { useState } from 'react';
-import InvoiceHeader from './componentes/InvoiceHeader';
-import InvoiceDetails from './componentes/InvoiceDetails';
-import InvoiceItemsTable from './componentes/InvoiceItemsTable';
-import FileUpload from './componentes/FileUpload';
+import { useState } from 'react';
+
 import './App.css';
+import InvoiceHeader from './InvoiceHeader';
+import InvoiceDetails from './InvoiceDetails';
+import InvoiceItemsTable from './InvoiceItemsTable';
+import FileUpload from './FileUpload';
 
 interface Customer {
   id: string;
@@ -18,7 +19,15 @@ interface Customer {
   shippingAddress: string;
   shippingCity: string;
 }
-
+interface InvoiceItem {
+  id:number;
+  serviceProduct:string;
+  quantity:number;
+  price: number;
+  unit:string;
+  vatRate:number;
+  total:number;
+}
 function App() {
   const [isRecurringInvoice, setIsRecurringInvoice] = useState(false);
   const [customers] = useState<Customer[]>([

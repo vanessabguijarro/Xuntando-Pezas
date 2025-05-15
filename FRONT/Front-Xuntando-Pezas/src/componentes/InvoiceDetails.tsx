@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Edit } from "lucide-react";
-import '../componentes/InvoiceDetails.css';
-
+//import '../componentes/InvoiceDetails.css';
+import './InvoiceDetails.css';
 interface InvoiceDetailsProps {
   customers: {
     id: string;
