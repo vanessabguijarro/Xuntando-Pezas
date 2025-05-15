@@ -140,7 +140,7 @@ const NewInvoice = ()=>{
         }}
       />
       </div>
-      <MenuLateral />
+      <MenuLateral url={0}/>
     </div>
 }
 
