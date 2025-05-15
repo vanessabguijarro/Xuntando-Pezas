@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CustomersTableBody } from "./Customers.TableBody";
 import { CustomersTableHeader } from "./Customers.TableHeader";
 import { Comunicacion } from "../../COMUNICACION.HTTP/Comunicacion.App";
+import { endpoints, urlServidorMaquinaVirtual } from "../../DATOS/datos";
 
 interface Customer {
   id: number;
@@ -17,7 +18,7 @@ export const CustomersTable = () => {
   }])
   const [editingRowId, setEditingRowId] = useState<boolean | number | null>(null);
   useEffect(() => {
-    fetch("http://localhost:3000/customers")
+    fetch(`${urlServidorMaquinaVirtual}/${endpoints.customers}`)
       .then((res) => res.json())
       .then((data) => {
         //status

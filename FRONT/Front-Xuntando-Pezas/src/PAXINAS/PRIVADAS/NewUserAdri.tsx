@@ -5,6 +5,7 @@ import BotonEnviar from "../../Componentes/PaxinaNewUser/BotonEnviar";
 import { DatosNewUser } from "../../TIPOS/INTERFACES.NewUser";
 import { Imaxes } from "../../assets/imaxes_newuser"; 
 import "../../Componentes/PaxinaNewUser/index-newuser.css";
+import { endpoints, urlServidorMaquinaVirtual } from "../../DATOS/datos";
 
 export default function NewUserAdri() {
   const [imagenPerfil, setImagenPerfil] = useState<string>(Imaxes.avatar);
@@ -43,7 +44,7 @@ export default function NewUserAdri() {
         formData.append("imagen", datosFormulario.imagen);
       }
 
-      const res = await fetch("http://localhost:3000/usuarios", {
+      const res = await fetch(`${urlServidorMaquinaVirtual}/${endpoints.usuarios}`, {
         method: "POST",
         body: formData,
       });

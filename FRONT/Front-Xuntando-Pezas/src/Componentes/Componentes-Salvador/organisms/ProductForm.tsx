@@ -4,6 +4,7 @@ import ImageUploader from '../molecules/ImageUploader';
 import Button from '../atoms/Button';
 import './ProductForm.css';
 import MenuLateral from '../../MenuLateral';
+import { endpoints, urlServidorMaquinaVirtual } from '../../../DATOS/datos';
 
 interface ProductFormData {
   nome: string;
@@ -54,7 +55,7 @@ const ProductForm: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/products', {
+      const response = await fetch(`${urlServidorMaquinaVirtual}/${endpoints.products}`, {
         method: 'POST',
         body: data,
       });
