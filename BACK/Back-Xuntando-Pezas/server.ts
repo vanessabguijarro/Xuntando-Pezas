@@ -27,6 +27,6 @@ app.put(endpoints.customersEditar,isUser,putCustomers)
 
 app.delete(endpoints.customersBorrar,isUser,deleteCustomers)
 
-app.listen(portNumber, 'localhost', () => {
+app.listen(portNumber, () => {
     console.log('Listening on localhost:' + portNumber);
 });
