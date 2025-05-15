@@ -134,12 +134,12 @@ const InvoiceDetails: React.FC<InvoiceDetailsProps> = (props) => {
     setLocalPaymentTerm(newPaymentTerm);
     props.onPaymentTermChange(newPaymentTerm);
   };
-
+/*
   const handleDueDateChange = (newDueDate: string) => {
     setLocalDueDate(newDueDate);
     props.onDueDateChange(newDueDate);
   };
-
+*/
 
   return (
     <div className="invoice-details-container">
