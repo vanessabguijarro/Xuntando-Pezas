@@ -23,7 +23,7 @@ const Home = () => {
     <LinksRutasPrivadasApp >
       <WrapperHeader estilos={estilos} titulo="Home" icono={""}/>
     </LinksRutasPrivadasApp>
-    <MenuLateral url={0} />
+    <MenuLateral url={1} />
   </Wrapper>
   
   </>;
