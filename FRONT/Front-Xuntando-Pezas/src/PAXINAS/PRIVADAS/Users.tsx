@@ -1,6 +1,4 @@
-import { Icono } from "../../Componentes/Icono";
 import MenuLateral from "../../Componentes/MenuLateral";
-import { Titulo } from "../../Componentes/Titulo";
 import Wrapper from "../../Componentes/Wrapper";
 import WrapperHeader from "../../Componentes/WrapperHeader";
 import "../../estilo/Users.App.css";

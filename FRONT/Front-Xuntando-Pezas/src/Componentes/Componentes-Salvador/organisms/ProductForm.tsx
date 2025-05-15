@@ -78,7 +78,7 @@ const ProductForm: React.FC = () => {
       alert('Error al enviar');
     }
   };
-
+/*
   const handleSecondaryClick = () => {
     alert('Botón secundario presionado');
   };
@@ -86,7 +86,7 @@ const ProductForm: React.FC = () => {
   const handleDangerClick = () => {
     alert('Botón eliminar presionado');
   };
-
+*/
   return (
     <div className="proba-centrado-NewProduct">
     <div className="centrando-NewProducto-Salvador">
@@ -108,7 +108,7 @@ const ProductForm: React.FC = () => {
       </Button>
     </form>
     </div>
-    <MenuLateral />
+    <MenuLateral url={0}/>
     </div>
   );
 };

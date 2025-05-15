@@ -9,7 +9,7 @@ import ProductForm from '../organisms/ProductForm';
 
 // @ts-ignore
 import './NewProductTemplate.css';
-import MenuLateral from '../../MenuLateral';
+//import MenuLateral from '../../MenuLateral';
 
 const NewProductTemplate: React.FC = () => {
   return React.createElement(
