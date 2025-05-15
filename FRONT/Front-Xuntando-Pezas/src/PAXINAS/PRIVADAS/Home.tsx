@@ -2,13 +2,16 @@
 import MenuLateral from "../../Componentes/MenuLateral";
 import Wrapper from "../../Componentes/Wrapper";
 import WrapperHeader from "../../Componentes/WrapperHeader";
-import { useDatosContext } from "../../HOOKS/useDatosContext";
 import { LinksRutasPrivadasApp } from "../../RUTAS/Links.PAXINAS.PRIVADAS";
 
 import { DatosWrapperHeader } from "../../TIPOS/INTERFACES.App";
 
 const Home = () => {
+<<<<<<< HEAD
   const { logout } = useDatosContext();
+=======
+  
+>>>>>>> 58c1aa974bc6cc92beca7887cd6f97f2ec5f3ad3
 
   const estiloHome = "height-100vh";
 
@@ -24,7 +27,7 @@ const Home = () => {
     <LinksRutasPrivadasApp >
       <WrapperHeader estilos={estilos} titulo="Home" icono={""}/>
     </LinksRutasPrivadasApp>
-    <MenuLateral url={0} />
+    <MenuLateral url={1} />
   </Wrapper>
   
   </>;

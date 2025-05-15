@@ -15,7 +15,7 @@ export const CustomersTable = () => {
   const [data, setData] = useState<Customer[]>([{
     id:0,name:"",email:"",status:"",role:""
   }])
-  const [editingRowId, setEditingRowId] = useState<boolean | null>(null);
+  const [editingRowId, setEditingRowId] = useState<boolean | number | null>(null);
   useEffect(() => {
     fetch("http://localhost:3000/customers")
       .then((res) => res.json())
@@ -30,7 +30,7 @@ export const CustomersTable = () => {
       })
       .catch((error) => console.error("Error al obtener customers:", error));
   }, []);
-const eventoModificarEliminar = (customer:Customer,accion:string) => (e: React.MouseEvent) =>{
+const eventoModificarEliminar = (customer:Customer,accion:string) => () =>{
   console.log("customer ",customer.id)
   console.log("accion ",accion)
   ///ENDPOINT customers/editar/:id -> `/customers/editar/${customer.id}`

@@ -1,13 +1,13 @@
 import NewProductTemplate from "../../Componentes/Componentes-Salvador/templates/NewProductTemplate";
-import MenuLateral from "../../Componentes/MenuLateral";
-
+//import MenuLateral from "../../Componentes/MenuLateral";
 
 const NewProduct = ()=>{
     return <div>
                 <div >
                     <NewProductTemplate />
                 </div> 
-                {/* <MenuLateral /> */}
+                {/* <MenuLateral url={1}/> */}
+                
     </div>
 }
 

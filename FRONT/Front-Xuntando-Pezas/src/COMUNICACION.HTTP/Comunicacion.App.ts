@@ -1,4 +1,3 @@
-import {  TipoRespostaServidor } from "../TIPOS/TIPOS.Comunicacion.App";
 import { adaptoToken } from "../FUNCIONS/funcions";
 /**
  * @author Pepito Gutierrez

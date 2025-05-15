@@ -14,8 +14,8 @@ type Props = {
   customers: Customer[];
   funcionEvento: (customer: Customer, accion: string) => () => void;
   handleChange: (id: number, key: string, value: string) => void;
-  estado: number | null;
-  setEdit: React.Dispatch<React.SetStateAction<number | null>>;
+  estado: boolean | number | null;
+  setEdit:  React.Dispatch<React.SetStateAction<number | boolean | null>>;
 };
 export const CustomersTableBody: React.FC<Props> = ({ customers,estado,setEdit,handleChange,funcionEvento }) => {
  
