@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Customer } from "../TIPOS/customer";
-import { endpoints, urlServidorMaquinaVirtual } from "../DATOS/datos";
+import { endpoints, urlServidorPCTraballadores } from "../DATOS/datos";
 
 export function useCustomers() {
     const [customers, setCustomers] = useState<Customer[]>([]);
@@ -8,7 +8,7 @@ export function useCustomers() {
     useEffect(() => {
       const loadCustomers = async () => {
         try {
-          const response = await fetch(`${urlServidorMaquinaVirtual}/${endpoints.customers}`);
+          const response = await fetch(`${urlServidorPCTraballadores}/${endpoints.customers}`);
           const loadedCustomers = await response.json();
           setCustomers(loadedCustomers);
         } catch (error) {
